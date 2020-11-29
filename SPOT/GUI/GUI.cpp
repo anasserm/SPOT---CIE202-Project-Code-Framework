@@ -221,9 +221,16 @@ ActionData GUI::GetUserAction(string msg) const
 				switch (ClickedItemOrder)
 				{
 				case ITM_ADD: return ActionData{ ADD_CRS };	//Add course
+				case ITM_DLT: return ActionData{ DEL_CRS };
+				case ITM_DISP: return ActionData{ EXIT };
+				case ITM_CHNG_CODE: return ActionData{ CHNGE_CRS_CODE };
+				case ITM_REORDER: return ActionData{ EXIT };
+				case ITM_NOTE: return ActionData{ ADD_NOTES };
+				case ITM_SAVE_PLAN: return ActionData{ SAVE_plan };
+				case ITM_LOAD_PLAN: return ActionData{ LOAD_plan };
+				case ITM_LOAD_CRS_CATALOG: return ActionData{ LOAD_CRS_CATALOG };
+				case ITM_LOAD_REQ: return ActionData{ LOAD_PRG_REQ };
 				case ITM_EXIT: return ActionData{ EXIT };		//Exit
-							  
-
 				default: return ActionData{ MENU_BAR };	//A click on empty place in menu bar
 				}
 			}
