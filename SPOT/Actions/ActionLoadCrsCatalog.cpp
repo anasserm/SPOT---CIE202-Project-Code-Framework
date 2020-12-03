@@ -50,33 +50,23 @@ bool ActionLoadCrsCatalog::Execute()
 	co = pch;
 
 	stringstream coreq(co);
-	vector<string> result;
-	list<string> coRe;                            //list of co requisite courses
+	                           
 	while (coreq.good()) {
 		string substr;
 		getline(coreq, substr, ',');              //get first string delimited by comma
-		result.push_back(substr);
+		pCrs->CoReq.push_back(substr);
 	}
-	
-	for (int i = 0; i < result.size() - 1; i++) 
-	{    
-		coRe.push_back(result[i]);
-	}
-
+	pCrs->CoReq.pop_back();
 
 	stringstream prereq(pre);
-	vector<string> pr;
-	list<string> preRe;                         //list of pre requisitecourses
+	                       
 	while (prereq.good()) {
 		string substr;
 		getline(prereq, substr, ',');          //get first string delimited by comma
-		pr.push_back(substr);
+		pCrs->CoReq.push_back(substr);
 	}
-	for (int i = 0; i < pr.size(); i++)
-	{    
-		preRe.push_back(result[i]);
-
-	}
+	
+	
 
 
 

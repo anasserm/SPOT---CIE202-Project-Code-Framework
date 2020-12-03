@@ -26,6 +26,16 @@ int Course::getCredits() const
 	return credits;
 }
 
+list<string> Course::getPreReq() const
+{
+	return  PreReq;
+}
+
+list<string> Course::getCoReq() const
+{
+	return CoReq;
+}
+
 void Course::DrawMe(GUI* pG) const
 {
 	pG->DrawCourse(this);
