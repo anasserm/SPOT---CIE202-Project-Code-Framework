@@ -26,12 +26,12 @@ int Course::getCredits() const
 	return credits;
 }
 
-list<string> Course::getPreReq() const
+list<string> Course::getPreReq() 
 {
 	return  PreReq;
 }
 
-list<string> Course::getCoReq() const
+list<string> Course::getCoReq() 
 {
 	return CoReq;
 }

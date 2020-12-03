@@ -49,21 +49,23 @@ bool ActionLoadCrsCatalog::Execute()
 	pch = strtok_s(NULL, ":", &context);         // string of co + ,req
 	co = pch;
 
+	list<string >CoReq = pCrs->getCoReq();
+	list<string >PreReq = pCrs->getPreReq();
 	stringstream coreq(co);
 	                           
 	while (coreq.good()) {
 		string substr;
 		getline(coreq, substr, ',');              //get first string delimited by comma
-		pCrs->CoReq.push_back(substr);
+		CoReq.push_back(substr);
 	}
-	pCrs->CoReq.pop_back();
+	CoReq.pop_back();
 
 	stringstream prereq(pre);
 	                       
 	while (prereq.good()) {
 		string substr;
 		getline(prereq, substr, ',');          //get first string delimited by comma
-		pCrs->CoReq.push_back(substr);
+		PreReq.push_back(substr);
 	}
 	
 	
