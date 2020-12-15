@@ -21,7 +21,6 @@ bool ActionLoadCrsCatalog::Execute()
 	ifstream finput("D:\\cie.txt");
 	while (!finput.eof())
 	{
-		cout << "Iteration" << endl;
 		string title, name, crd, co, pre;
 		char* pch;
 		char* context = nullptr;
@@ -32,26 +31,22 @@ bool ActionLoadCrsCatalog::Execute()
 		// get course code name 
 		pch = strtok_s(line, ",", &context);
 		name = pch;
-
 		// get course title 
 		pch = strtok_s(NULL, ",", &context);
 		title = pch;
-
 		// get credits
 		pch = strtok_s(NULL, ",", &context);
 		char* c[1];
 		c[0] = pch;
 		int cre;
 		cre = stoi(c[0]);
-		
 		Course* pCrs = new Course(name, title, cre);
-
 
 		pch = strtok_s(NULL, ":", &context);
 		pch = strtok_s(NULL, ":", &context);         // string of co + ,req
 		co = pch;
-		list<string >CoReq = pCrs->getCoReq();
-		list<string >PreReq = pCrs->getPreReq();
+		list<string >CoReq=pCrs->getCoReq();
+		list<string >PreReq=pCrs->getPreReq();
 		stringstream coreq(co);
 		while (coreq.good()) {
 			string substr;
@@ -63,20 +58,17 @@ bool ActionLoadCrsCatalog::Execute()
 		pre = pch;
 
 		stringstream prereq(pre);
-		cout << pre << endl;
-		int x;
-		cin >> x;
+
 		while (prereq.good()) {
 			string sub;
 			getline(prereq, sub, ',');          //get first string delimited by comma
 			PreReq.push_back(sub);
 		}
 
-		//Pcata->addCrs(pCrs);
+		Pcata->addCrs(pCrs);
 
 	}
 
-	
 	
 		return true;
 }

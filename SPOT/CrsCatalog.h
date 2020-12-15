@@ -6,9 +6,11 @@
 class CrsCatalog
 {
 
-	vector<Course*> Courses;
+	
 
 public:
+
+	vector<Course*> Courses;
 
 	vector<Course*> getCrsCatalog()const;
 

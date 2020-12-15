@@ -9,8 +9,8 @@ using namespace std;
 //Base class for all types of courses
 class Course : public Drawable
 {
-	const Course_Code code;	//course code: e.g. "CIE202". This is the course ID
-	const string Title;		//course title: e.g. "Fundamentals of Computer Programming"
+	 Course_Code code;	//course code: e.g. "CIE202". This is the course ID
+	 string Title;		//course title: e.g. "Fundamentals of Computer Programming"
 	int credits;	//no. of course credits
 	string type;	//Univ, track, or major.....etc.
 	bool Done;		//Done or not yet?

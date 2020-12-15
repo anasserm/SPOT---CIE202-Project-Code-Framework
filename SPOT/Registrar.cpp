@@ -21,6 +21,7 @@ Registrar::Registrar()
 {
 	pGUI = new GUI;	//create interface object
 	pSPlan = new StudyPlan;	//create a study plan.
+	Pcata = new CrsCatalog;
 }
 
 //returns a pointer to GUI
@@ -125,16 +126,17 @@ void Registrar::Run()
 {
 
 	ActionLoadCrsCatalog* p = new ActionLoadCrsCatalog(this);
-	bool ahmed = p->Execute();
+	bool done = p->Execute();
+	
 
-	//vector<Course*> v1 = Pcata->getCrsCatalog();
+	vector<Course*> v1 = Pcata->getCrsCatalog();
 
-	/*for (unsigned int i = 0; i < v1.size(); i++) {
+	for (unsigned int i = 0; i < v1.size(); i++) {
 		cout << v1[i]->getCode() << " ";
 		cout << v1[i]->getCredits() << " ";
 		cout << v1[i]->getTitle() << " ";
 		
-	}*/
+	}
 	getUserType();
 	while (true)
 	{
