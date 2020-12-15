@@ -91,7 +91,6 @@ Action* Registrar::CreateRequiredAction()
 	case REDO:
 		RequiredAction = new ActionRedo(this);
 		break;
-		
 	}
 	return RequiredAction;
 }
@@ -127,16 +126,9 @@ void Registrar::Run()
 
 	ActionLoadCrsCatalog* p = new ActionLoadCrsCatalog(this);
 	bool done = p->Execute();
-	
 
-	vector<Course*> v1 = Pcata->getCrsCatalog();
-
-	for (unsigned int i = 0; i < v1.size(); i++) {
-		cout << v1[i]->getCode() << " ";
-		cout << v1[i]->getCredits() << " ";
-		cout << v1[i]->getTitle() << " ";
 		
-	}
+
 	getUserType();
 	while (true)
 	{

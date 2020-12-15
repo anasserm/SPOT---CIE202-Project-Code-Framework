@@ -25,6 +25,11 @@ bool AcademicYear::AddCourse(Course* pC, SEMESTER sem)
 	return true;
 }
 
+list<Course*> AcademicYear::getYearCourses(SEMESTER sem) const
+{
+	return YearCourses[sem];
+}
+
 
 void AcademicYear::DrawMe(GUI* pGUI) const
 {

@@ -24,6 +24,7 @@ public:
 	virtual ~AcademicYear();
 
 	bool AddCourse(Course*, SEMESTER );
+	list<Course*> getYearCourses(SEMESTER sem)const;
 	
 
 	void virtual DrawMe(GUI*) const;

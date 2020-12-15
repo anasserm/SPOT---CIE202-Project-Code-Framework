@@ -1,10 +1,9 @@
 #include "ActionLoadCrsCatalog.h"
-#include "..\Registrar.h"
 #include "..\CrsCatalog.h"
 #include <fstream>
 #include <vector>
 #include <sstream>
-
+#include "../Registrar.h"
 #include <iostream>
 #include <string>
 
@@ -18,7 +17,7 @@ bool ActionLoadCrsCatalog::Execute()
 	GUI* pGUI = pReg->getGUI();
 	
 	CrsCatalog* Pcata = pReg->getCrsCatalog();
-	ifstream finput("D:\\cie.txt");
+	ifstream finput("cie.txt");
 	while (!finput.eof())
 	{
 		string title, name, crd, co, pre;

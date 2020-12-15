@@ -1,4 +1,8 @@
 #pragma once
+#include "list"
+#include "vector"
+
+
 
 class Registrar; //forward class declaration
 
