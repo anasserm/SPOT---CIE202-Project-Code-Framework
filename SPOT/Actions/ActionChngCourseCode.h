@@ -1,5 +1,6 @@
 #pragma once
 #include "Action.h"
+#include "../Registrar.h"
 
 
 class ActionChngCourseCode

@@ -14,15 +14,14 @@ int main()
 	Reg.Run();
 	return 0;
 	
-	/*
-	Course* c1 = new Course("Abdo", "Nasser", 1);
+	
+	/*Course* c1 = new Course("Abdo", "Nasser", 1);
 	Course* c2 = new Course("Ahmed", "Youssif", 2);
 	Course* c3 = new Course("Mostafa", "Maged", 3);
 
-	list<Course*> l;
-	l.push_back(c1);
-	l.push_back(c2);
-	l.push_back(c3);
+	StudyPlan *sp = new StudyPlan;
+	vector<AcademicYear*> years = sp->getPlan();
+	
 
 	for (list<Course*>::iterator iter = l.begin(); iter != l.end(); ++iter)
 	{
