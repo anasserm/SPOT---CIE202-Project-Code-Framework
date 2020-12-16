@@ -176,6 +176,7 @@
     <ClCompile Include="Actions\ActionUndo.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="CrsCatalog.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -289,6 +290,7 @@
     <ClInclude Include="Actions\ActionUndo.h">
       <Filter>Actions</Filter>
     </ClInclude>
+    <ClInclude Include="CrsCatalog.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="GUI\CMUgraphicsLib\Manual.txt">
