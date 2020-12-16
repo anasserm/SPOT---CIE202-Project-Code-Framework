@@ -25,6 +25,7 @@ public:
 	list <string> getPreReq();
 	list <string> getCoReq();
 	void setCode(Course_Code crs_code);
+
 	void DrawMe(GUI*) const;
 	virtual ~Course();
 

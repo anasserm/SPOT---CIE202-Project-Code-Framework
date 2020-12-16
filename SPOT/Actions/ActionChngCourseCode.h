@@ -2,7 +2,6 @@
 #include "Action.h"
 #include "../Registrar.h"
 
-
 class ActionChngCourseCode
 	: public Action
 {

@@ -1,6 +1,6 @@
 #include "ActionChngCourseCode.h"
 
-ActionChngCourseCode::ActionChngCourseCode(Registrar*p) :Action(p)
+ActionChngCourseCode::ActionChngCourseCode(Registrar* p) :Action(p)
 {
 }
 
@@ -54,8 +54,7 @@ bool ActionChngCourseCode::Execute()
 		list<Course*>::iterator it2 = listCourses.begin();
 		advance(it2, idx);
 
-		/*int x;
-		cin >> x;*/
+		
 		(*it2)->setCode(new_code);
 
 	}

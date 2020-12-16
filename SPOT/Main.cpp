@@ -15,40 +15,6 @@ int main()
 	return 0;
 	
 	
-	/*Course* c1 = new Course("Abdo", "Nasser", 1);
-	Course* c2 = new Course("Ahmed", "Youssif", 2);
-	Course* c3 = new Course("Mostafa", "Maged", 3);
-
-	StudyPlan *sp = new StudyPlan;
-	vector<AcademicYear*> years = sp->getPlan();
-	
-
-	for (list<Course*>::iterator iter = l.begin(); iter != l.end(); ++iter)
-	{
-		cout << (*iter)->getCredits() << " ";
-	}
-
-	int idx = 0;
-	for (list<Course*>::iterator iter = l.begin(); iter != l.end(); ++iter)
-	{
-		if ((*iter)->getCode() == "Ahmed")
-			break;
-		idx++;
-	}
-	list<Course*>::iterator iter = l.begin();
-	advance(iter, idx);
-	cout << (*iter)->getCode() << endl;
-	int x;
-	cin >> x;
-	/*l.erase(iter);
-	cout << endl;
-
-	for (list<Course*>::iterator iter = l.begin(); iter != l.end(); ++iter)
-	{
-		cout << (*iter)->getCredits() << " ";
-	}
-	
-	*/
 	
 	
 }
