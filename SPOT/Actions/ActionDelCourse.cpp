@@ -54,8 +54,6 @@ bool ActionDelCourse::Execute()
 		list<Course*>::iterator it2 = listCourses.begin();
 		advance(it2, idx);
 
-		/*int x;
-		cin >> x;*/
 		listCourses.erase(it2);
 
 	}

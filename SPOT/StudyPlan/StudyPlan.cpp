@@ -37,6 +37,11 @@ StudyPlan::~StudyPlan()
 {
 }
 
+void StudyPlan::setNotes(string s)
+{
+	this->PlanNotes = s;
+}
+
 string StudyPlan::getNotes()
 {
 	return PlanNotes;

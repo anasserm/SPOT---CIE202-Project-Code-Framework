@@ -20,6 +20,7 @@ public:
 	void virtual DrawMe(GUI*) const;
 	vector<AcademicYear*> getPlan()const;
 	virtual ~StudyPlan();
+	void setNotes(string);
 	string getNotes();
 };
 

@@ -18,7 +18,7 @@ bool ActionAddNote::Execute()
 
 
 	pGUI->PrintMsg("Enter Your Notes: ");
-	pStdy->getNotes() = pGUI->GetSrting();
+	pStdy->setNotes(pGUI->GetSrting());
 
 
 	return true;

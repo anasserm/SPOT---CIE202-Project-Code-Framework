@@ -40,12 +40,13 @@ list<string> Course::getCoReq()
 	return CoReq;
 }
 
+void Course::DrawMe(GUI* pG) const
+{
+	pG->DrawCourse(this);
+}
+
 void Course::setCode(Course_Code crs_code)
 {
 	code = crs_code;
 }
 
-void Course::DrawMe(GUI* pG) const
-{
-	pG->DrawCourse(this);
-}
