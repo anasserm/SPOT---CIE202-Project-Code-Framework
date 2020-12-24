@@ -39,11 +39,11 @@ class GUI
 	};
 
 	//Some constants for GUI
-	static const int	WindWidth = 1500, WindHeight = 740,	//Window width and height
+	static const int	WindWidth = 1200, WindHeight = 740,	//Window width and height
 		wx = 0, wy = 0,		//Window starting coordinates
 		StatusBarHeight = 60,	//Status Bar Height
 		MenuBarHeight = 80,		//Menu Bar Height (distance from top of window to bottom line of menu bar)
-		CellWidth = 375,		// width of a single cell in the grid
+		CellWidth = 300,		// width of a single cell in the grid
 		MenuItemWidth = 70;		//Width of each item in the menu
 
 	static int nYears, CellHeight;

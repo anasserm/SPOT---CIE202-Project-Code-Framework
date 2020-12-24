@@ -134,7 +134,6 @@ void GUI::UpdateInterface() const
 
 void GUI::close() const
 {
-	cout << "Close()" << endl;
 	pWind->SetPen(WHITE, 0);
 	pWind->SetBrush(WHITE);
 
@@ -236,14 +235,10 @@ ActionData GUI::GetUserAction(string msg) const
 			}
 
 			//[2] User clicks on the drawing area
-			if (y >= MenuBarHeight && y < WindHeight - StatusBarHeight && x > 375)
+			if (y >= MenuBarHeight && y < WindHeight - StatusBarHeight && x > CellWidth)
 			{
-				cout << x << endl;
-				cout << y << endl;
 				SEMESTER sem = xtosem(x); 
 				int yr = ytoyear(y);
-				cout << yr << endl;
-				cout << sem << endl;
 				return ActionData{ DRAW_AREA,x,y, yr, sem };	//user want clicks inside drawing area
 			}
 
