@@ -14,9 +14,11 @@ class Course : public Drawable
 	int credits;	//no. of course credits
 	string type;	//Univ, track, or major.....etc.
 	bool Done;		//Done or not yet?
-
+	string grade;
 	list<Course_Code> PreReq;	//list of prerequisites
 	list<Course_Code> CoReq;	//list of corequisites
+	
+	string status;
 public:
 	Course(Course_Code r_code,string r_title, int crd);
 	string getTitle() const;
@@ -25,8 +27,9 @@ public:
 	list <string> getPreReq();
 	list <string> getCoReq();
 	void setCode(Course_Code crs_code);
-
+	void setGrade(string grad);
 	void DrawMe(GUI*) const;
 	virtual ~Course();
-
+	
+	void setStatus(string s);
 };

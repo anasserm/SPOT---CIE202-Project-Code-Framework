@@ -11,7 +11,7 @@ class Registrar
 {
 	
 	GUI *pGUI;	//pointer to GUI 
-	Rules RegRules;	//Registration rules
+	Rules* RegRules;	//Registration rules
 	StudyPlan *pSPlan;
 	CrsCatalog* Pcata;
 public:

@@ -87,7 +87,6 @@ Action* Registrar::CreateRequiredAction()
 		RequiredAction = new ActionUndo(this);
 		break;
 
-
 	case REDO:
 		RequiredAction = new ActionRedo(this);
 		break;

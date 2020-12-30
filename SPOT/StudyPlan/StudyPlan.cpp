@@ -1,6 +1,6 @@
 #include "StudyPlan.h"
 
-
+int StudyPlan::numOfCourses = 0;
 
 StudyPlan::StudyPlan()
 {
@@ -17,7 +17,7 @@ bool StudyPlan::AddCourse(Course* pC, int year, SEMESTER sem)
 	//TODO: add all requried checks to add the course 
 
 	plan[year - 1]->AddCourse(pC, sem);
-	
+	numOfCourses++;
 	return true;
 }
 
@@ -45,4 +45,9 @@ void StudyPlan::setNotes(string s)
 string StudyPlan::getNotes()
 {
 	return PlanNotes;
+}
+
+int StudyPlan::getNumOfCourses() const
+{
+	return this->numOfCourses;
 }

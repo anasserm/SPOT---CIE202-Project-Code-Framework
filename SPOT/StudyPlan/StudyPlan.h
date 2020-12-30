@@ -10,7 +10,7 @@ class StudyPlan:public Drawable
 	int TotalUnivCredits=0, TotalMajorCredits=0,
 		TotalTrackCredits=0, TotalConcentrationCredits=0,
 		TotalMinorCredits=0;
-
+	static int numOfCourses;
 	vector<AcademicYear*> plan;	//plan is a vector of academic years
 
 	string PlanNotes;
@@ -22,5 +22,6 @@ public:
 	virtual ~StudyPlan();
 	void setNotes(string);
 	string getNotes();
+	int getNumOfCourses()const;
 };
 

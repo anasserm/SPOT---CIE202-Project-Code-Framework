@@ -1,17 +1,26 @@
 #include "Course.h"
 #include "../GUI/GUI.h"
 
+ 
+
 Course::Course(Course_Code r_code, string r_title, int crd)//:code(r_code),Title(r_title)
 {
 	code = r_code;
 	Title = r_title;
 	credits = crd;
-
+	
 
 }
 
 Course::~Course()
 {
+}
+
+
+
+void Course::setStatus(string s)
+{
+	this->status = s;
 }
 
 Course_Code Course::getCode() const
@@ -48,5 +57,10 @@ void Course::DrawMe(GUI* pG) const
 void Course::setCode(Course_Code crs_code)
 {
 	code = crs_code;
+}
+
+void Course::setGrade(string grad)
+{
+	this->grade = grad;
 }
 
