@@ -27,9 +27,11 @@ public:
 	list <string> getPreReq();
 	list <string> getCoReq();
 	void setCode(Course_Code crs_code);
+	string getGrade()const;
+	void setStatus(string s) ;
 	void setGrade(string grad);
 	void DrawMe(GUI*) const;
 	virtual ~Course();
 	
-	void setStatus(string s);
+	
 };

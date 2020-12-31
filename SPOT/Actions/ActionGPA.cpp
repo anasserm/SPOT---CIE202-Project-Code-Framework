@@ -24,11 +24,11 @@ bool ActionGPA::Execute()
 	vector<AcademicYear*> years = sp->getPlan();
 	int NumOfCrs = sp->getNumOfCourses();
 	string lettergrade;
-	double credit;
-	double caltimes = 0;
-	double totalcal = 0;
+	double credit=0;
+	double points = 0;
+	double totalPoints = 0;
 	double totalcredit = 0;
-	double finalgpa = 0;
+	double gpa = 0;
 
 	for (int yr = 0; yr < years.size(); yr++)
 	{
@@ -40,68 +40,66 @@ bool ActionGPA::Execute()
 
 			for (it = listCourses.begin(); it != listCourses.end(); ++it)
 			{
-				pGUI->PrintMsg((*it)->getCode());
-				pGUI->PrintMsg("Enter Your grade for this course: ");
-				(*it)->setGrade(pGUI->GetSrting());
-				int credit = (*it)->getCredits();
+				lettergrade = (*it)->getGrade();
+				if (lettergrade.empty())
+				{
+					pGUI->PrintMsg((*it)->getCode());
+						pGUI->PrintMsg("Enter Your grade for this course: ");
+						(*it)->setGrade(pGUI->GetSrting());
+				}
+				 credit = (*it)->getCredits();
 
 				if (lettergrade == "a" || lettergrade == "A")
 				{
-					caltimes = credit * A;
+					points = credit * A;
 				}
 				else if (lettergrade == "a-" || lettergrade == "A-")
 				{
-					caltimes = credit * A_MINUS;
+					points = credit * A_MINUS;
 				}
 				else if (lettergrade == "b+" || lettergrade == "B+")
 				{
-					caltimes = credit * B_PLUS;
+					points = credit * B_PLUS;
 				}
 				else if (lettergrade == "b" || lettergrade == "B")
 				{
-					caltimes = credit * B;
+					points = credit * B;
 				}
 				else if (lettergrade == "b-" || lettergrade == "B-")
 				{
-					caltimes = credit * B_MINUS;
+					points = credit * B_MINUS;
 				}
 				else if (lettergrade == "c+" || lettergrade == "C+")
 				{
-					caltimes = credit * C_PLUS;
+					points = credit * C_PLUS;
 				}
 				else if (lettergrade == "c" || lettergrade == "C")
 				{
-					caltimes = credit * C;
+					points = credit * C;
 				}
 				else if (lettergrade == "c-" || lettergrade == "C-")
 				{
-					caltimes = credit * C_MINUS;
+					points = credit * C_MINUS;
 				}
 				else if (lettergrade == "d" || lettergrade == "D")
 				{
-					caltimes = credit * D;
+					points = credit * D;
 				}
 				else if (lettergrade == "f" || lettergrade == "F")
 				{
-					caltimes = credit * F;
+					points = credit * F;
 				}
-				else
-				{
-					pGUI->PrintMsg("Invaild Input...");
-				}
-
-
-				totalcredit += credit;
-				totalcal += caltimes;
+				
+				totalPoints += points;
 
 
 			}
 		}
 	}
 
-	finalgpa = totalcal / totalcredit;
+	gpa = totalPoints / sp->getCredits();
 	pGUI->PrintMsg("your GPA is : ");
-	pGUI->PrintMsg(to_string(finalgpa));
+	pGUI->PrintMsg(to_string(gpa));
 
 	return true;
 

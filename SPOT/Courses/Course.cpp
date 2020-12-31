@@ -59,6 +59,13 @@ void Course::setCode(Course_Code crs_code)
 	code = crs_code;
 }
 
+string Course::getGrade() const
+{
+	return this->grade;
+}
+
+
+
 void Course::setGrade(string grad)
 {
 	this->grade = grad;

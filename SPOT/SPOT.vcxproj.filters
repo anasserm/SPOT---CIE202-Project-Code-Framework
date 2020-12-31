@@ -180,6 +180,12 @@
     <ClCompile Include="Actions\ActionGPA.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\ActionStatus.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\ActionStudentLevel.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -295,6 +301,12 @@
     </ClInclude>
     <ClInclude Include="CrsCatalog.h" />
     <ClInclude Include="Actions\ActionGPA.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionStatus.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionStudentLevel.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>

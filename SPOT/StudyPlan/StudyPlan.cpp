@@ -17,6 +17,7 @@ bool StudyPlan::AddCourse(Course* pC, int year, SEMESTER sem)
 	//TODO: add all requried checks to add the course 
 
 	plan[year - 1]->AddCourse(pC, sem);
+	TotalCredits += pC->getCredits();
 	numOfCourses++;
 	return true;
 }
@@ -40,6 +41,11 @@ StudyPlan::~StudyPlan()
 void StudyPlan::setNotes(string s)
 {
 	this->PlanNotes = s;
+}
+
+int StudyPlan::getCredits() const
+{
+	return this->TotalCredits;
 }
 
 string StudyPlan::getNotes()

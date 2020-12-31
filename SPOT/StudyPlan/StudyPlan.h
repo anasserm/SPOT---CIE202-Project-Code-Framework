@@ -21,6 +21,7 @@ public:
 	vector<AcademicYear*> getPlan()const;
 	virtual ~StudyPlan();
 	void setNotes(string);
+	int getCredits() const;
 	string getNotes();
 	int getNumOfCourses()const;
 };
