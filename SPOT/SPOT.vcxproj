@@ -119,6 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActionLoadCrsOffering.cpp" />
     <ClCompile Include="Actions\ActionAddCourse.cpp" />
     <ClCompile Include="Actions\ActionAddNote.cpp" />
     <ClCompile Include="Actions\ActionChngCourseCode.cpp" />
@@ -126,6 +127,7 @@
     <ClCompile Include="Actions\ActionExit.cpp" />
     <ClCompile Include="Actions\ActionGPA.cpp" />
     <ClCompile Include="Actions\ActionLoadCrsCatalog.cpp" />
+    <ClCompile Include="Actions\ActionLoadCrsOffering.cpp" />
     <ClCompile Include="Actions\ActionLoadPrgReq.cpp" />
     <ClCompile Include="Actions\ActionLoadStdyPlan.cpp" />
     <ClCompile Include="Actions\ActionRedo.cpp" />
@@ -135,6 +137,7 @@
     <ClCompile Include="Actions\ActionUndo.cpp" />
     <ClCompile Include="Courses\Course.cpp" />
     <ClCompile Include="CrsCatalog.cpp" />
+    <ClCompile Include="CrsOffering.cpp" />
     <ClCompile Include="GUI\CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="GUI\CMUgraphicsLib\colors.cpp" />
     <ClCompile Include="GUI\CMUgraphicsLib\image.cpp" />
@@ -173,11 +176,13 @@
     <ClCompile Include="GUI\Drawable.cpp" />
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ProgReq.cpp" />
     <ClCompile Include="Registrar.cpp" />
     <ClCompile Include="StudyPlan\AcademicYear.cpp" />
     <ClCompile Include="StudyPlan\StudyPlan.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActionLoadCrsOffering.h" />
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\ActionAddCourse.h" />
     <ClInclude Include="Actions\ActionAddNote.h" />
@@ -186,6 +191,7 @@
     <ClInclude Include="Actions\ActionExit.h" />
     <ClInclude Include="Actions\ActionGPA.h" />
     <ClInclude Include="Actions\ActionLoadCrsCatalog.h" />
+    <ClInclude Include="Actions\ActionLoadCrsOffering.h" />
     <ClInclude Include="Actions\ActionLoadPrgReq.h" />
     <ClInclude Include="Actions\ActionLoadStdyPlan.h" />
     <ClInclude Include="Actions\ActionRedo.h" />
@@ -195,6 +201,7 @@
     <ClInclude Include="Actions\ActionUndo.h" />
     <ClInclude Include="Courses\Course.h" />
     <ClInclude Include="CrsCatalog.h" />
+    <ClInclude Include="CrsOffering.h" />
     <ClInclude Include="GUI\CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="GUI\CMUgraphicsLib\colors.h" />
     <ClInclude Include="GUI\CMUgraphicsLib\error.h" />
@@ -217,6 +224,7 @@
     <ClInclude Include="GUI\Drawable.h" />
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="DEFs.h" />
+    <ClInclude Include="ProgReq.h" />
     <ClInclude Include="Registrar.h" />
     <ClInclude Include="Rules.h" />
     <ClInclude Include="StudyPlan\AcademicYear.h" />

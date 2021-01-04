@@ -22,6 +22,9 @@ Registrar::Registrar()
 	pGUI = new GUI;	//create interface object
 	pSPlan = new StudyPlan;	//create a study plan.
 	Pcata = new CrsCatalog;
+	pr = new ProgReq;
+	RegRules = new Rules;
+	pCO = new CrsOffering;
 }
 
 //returns a pointer to GUI
@@ -118,6 +121,16 @@ void Registrar::getUserType()const
 CrsCatalog* Registrar::getCrsCatalog() const
 {
 	return this->Pcata;
+}
+
+ProgReq* Registrar::getProgReq() const
+{
+	return this->pr;
+}
+
+CrsOffering* Registrar::getCrsOffering() const
+{
+	return pCO;
 }
 
 void Registrar::Run()

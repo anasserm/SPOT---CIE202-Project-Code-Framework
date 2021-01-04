@@ -4,6 +4,8 @@
 #include "Rules.h"
 #include "StudyPlan/StudyPlan.h"
 #include "CrsCatalog.h"
+#include "ProgReq.h" 
+#include "CrsOffering.h"
 
 
 //The maestro class for the application
@@ -14,6 +16,9 @@ class Registrar
 	Rules* RegRules;	//Registration rules
 	StudyPlan *pSPlan;
 	CrsCatalog* Pcata;
+	ProgReq* pr;
+	CrsOffering* pCO;
+
 public:
 	static string user_type;
 	Registrar();
@@ -24,6 +29,8 @@ public:
 	StudyPlan* getStudyPlay() const;
 	void getUserType()const;
 	CrsCatalog* getCrsCatalog()const;
+	ProgReq* getProgReq()const;
+	CrsOffering* getCrsOffering()const;
 	void Run();
 
 	~Registrar();

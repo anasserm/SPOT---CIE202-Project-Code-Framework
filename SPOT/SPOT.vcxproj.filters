@@ -186,6 +186,12 @@
     <ClCompile Include="Actions\ActionStudentLevel.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="ProgReq.cpp" />
+    <ClCompile Include="CrsOffering.cpp" />
+    <ClCompile Include="ActionLoadCrsOffering.cpp" />
+    <ClCompile Include="Actions\ActionLoadCrsOffering.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -307,6 +313,12 @@
       <Filter>Actions</Filter>
     </ClInclude>
     <ClInclude Include="Actions\ActionStudentLevel.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgReq.h" />
+    <ClInclude Include="CrsOffering.h" />
+    <ClInclude Include="ActionLoadCrsOffering.h" />
+    <ClInclude Include="Actions\ActionLoadCrsOffering.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>

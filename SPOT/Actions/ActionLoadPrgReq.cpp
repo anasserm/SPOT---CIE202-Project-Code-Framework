@@ -4,6 +4,7 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
+#include "../Registrar.h"
 using namespace std;
 
 ActionLoadPrgReq::ActionLoadPrgReq(Registrar*p) :Action(p)
@@ -15,20 +16,21 @@ bool ActionLoadPrgReq::Execute()
 {
 	
 	ifstream file("D:\CIE-Requirements.txt");
+	ProgReq* pr = pReg->getProgReq();
 
-	int totalCrd;
-	int unicomplCR, unielecCR;
-	int trachcomplCR;
-	int majrcomplCR, majrelecCR;
-	int concen;
-	int majrConcenComplCR;
-	int majrConcenElecCR;
+	int totalCrd=pr->getTotalCredit();
+	int unicomplCR=pr->getUniComplsoryCredit(), unielecCR=pr->getUniElectiveCredit();
+	int trachcomplCR=pr->getTrackComplsoryCredit();
+	int majrcomplCR=pr->getMajorCommonComplsoryCredit(), majrelecCR=pr->getMajorCommonElectiveCredit();
+	int concen=pr->getNumOfConecntrations();
+	int majrConcenComplCR=pr->getMajorConcentration1ComplsoryCredit();
+	int majrConcenElecCR=pr->getMajorConcentration1ElectiveCredit();
 
-	vector<string> unicompl;
-	vector<string> unielect;
-	vector<string> trackcompl;
-	vector<string> majrCommonCompl;
-	vector<string>  majorCommonElect;
+	vector<string> unicompl=pr->getUniComplsoryCrs();
+	vector<string> unielect=pr->getUniElectiveCrs();
+	vector<string> trackcompl=pr->getTrackCrs();
+	vector<string> majrCommonCompl=pr->getMajorCommonComplsoryCrs();
+	vector<string>  majorCommonElect=pr->getMajorCommonElectiveCrs();
 
 	char* pch;
 	char* context = nullptr;
