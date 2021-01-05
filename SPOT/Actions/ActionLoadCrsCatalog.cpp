@@ -17,7 +17,7 @@ bool ActionLoadCrsCatalog::Execute()
 	GUI* pGUI = pReg->getGUI();
 	
 	CrsCatalog* Pcata = pReg->getCrsCatalog();
-	ifstream finput("cie.txt");
+	ifstream finput("Catalog.txt");
 	while (!finput.eof())
 	{
 		string title, name, crd, co, pre;
@@ -35,10 +35,7 @@ bool ActionLoadCrsCatalog::Execute()
 		title = pch;
 		// get credits
 		pch = strtok_s(NULL, ",", &context);
-		char* c[1];
-		c[0] = pch;
-		int cre;
-		cre = stoi(c[0]);
+		int cre = stoi(pch);
 		Course* pCrs = new Course(name, title, cre);
 
 		pch = strtok_s(NULL, ":", &context);

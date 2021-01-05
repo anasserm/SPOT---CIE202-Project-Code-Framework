@@ -34,14 +34,18 @@ bool ActionLoadCrsOffering::Execute()
 		//reading year
 		pch = strtok_s(line, ",", &context);
 		year = pch;
+
 		//reading semester
 		pch = strtok_s(NULL, ",", &context);
 		sem = pch;
+
 		//reading list of courses
-
-
-
-
+		stringstream courses(pch);
+		while (courses.good()) {
+			string substr;
+			getline(courses, substr, ',');              //get first string delimited by comma
+			crs.push_back(substr);
+		}
 
 	}
 
