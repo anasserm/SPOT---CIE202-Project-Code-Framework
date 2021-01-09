@@ -119,7 +119,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ActionLoadCrsOffering.cpp" />
     <ClCompile Include="Actions\ActionAddCourse.cpp" />
     <ClCompile Include="Actions\ActionAddNote.cpp" />
     <ClCompile Include="Actions\ActionChngCourseCode.cpp" />
@@ -182,7 +181,6 @@
     <ClCompile Include="StudyPlan\StudyPlan.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ActionLoadCrsOffering.h" />
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\ActionAddCourse.h" />
     <ClInclude Include="Actions\ActionAddNote.h" />

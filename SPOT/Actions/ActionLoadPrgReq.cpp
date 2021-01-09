@@ -5,7 +5,6 @@
 #include <vector>
 #include <sstream>
 #include "../Registrar.h"
-
 using namespace std;
 
 ActionLoadPrgReq::ActionLoadPrgReq(Registrar*p) :Action(p)
@@ -16,31 +15,8 @@ ActionLoadPrgReq::ActionLoadPrgReq(Registrar*p) :Action(p)
 bool ActionLoadPrgReq::Execute()
 {
 	
-	
+	ifstream file("D:\CIE-Requirements.txt");
 	ProgReq* pr = pReg->getProgReq();
-	GUI* pGUI = pReg->getGUI();
-
-	pGUI->PrintMsg("Choose your major: 1=CIE, 2=SPC, 3=ENV, 4=NANO, 5=REE");
-	int Major =stoi(pGUI->GetSrting());
-	ifstream file;
-	while (Major > 0 && Major < 6)
-	{
-		if (Major == 1)
-			ifstream file("../Requirement Files/CIE-Requirements.txt");
-		else if (Major == 2)
-			ifstream file("../Requirement Files/SPC-Requirements.txt");
-		else if (Major == 3)
-			ifstream file("../Requirement Files/ENV-Requirements.txt");
-		else if (Major == 4)
-			ifstream file("../Requirement Files/NANOENG-Requirements.txt");
-		else if (Major == 5)
-			ifstream file("../Requirement Files/REE-Requirements.txt");
-		else
-		{
-			pGUI->PrintMsg("Error, please choose carefully again. ");
-			Major = stoi(pGUI->GetSrting());
-		}
-	}
 
 	int totalCrd=pr->getTotalCredit();
 	int unicomplCR=pr->getUniComplsoryCredit(), unielecCR=pr->getUniElectiveCredit();

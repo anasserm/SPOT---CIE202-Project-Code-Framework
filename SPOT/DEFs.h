@@ -31,9 +31,7 @@ enum ActionType
 	SAVE_plan,		//Save a study plan to file
 	LOAD_plan,		//Load a study plan from a file
 
-	GPA,
-	Crs_Status,
-	Student_level,
+
 
 	UNDO,		//Undo the last Action preformed
 	REDO,		//Redo the last Action canceled

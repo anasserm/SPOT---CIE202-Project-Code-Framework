@@ -229,10 +229,6 @@ ActionData GUI::GetUserAction(string msg) const
 				case ITM_LOAD_PLAN: return ActionData{ LOAD_plan };
 				case ITM_LOAD_CRS_CATALOG: return ActionData{ LOAD_CRS_CATALOG };
 				case ITM_LOAD_REQ: return ActionData{ LOAD_PRG_REQ };
-				//case ITM_CRS_STATUS: return ActionData{ Crs_Status };
-				//case ITM_GPA: return ActionData{ GPA };
-				//case ITM_STUDENT_LEVEL: return ActionData{ Student_level };
-				
 				case ITM_EXIT: return ActionData{ EXIT };		//Exit
 				default: return ActionData{ MENU_BAR };	//A click on empty place in menu bar
 				}

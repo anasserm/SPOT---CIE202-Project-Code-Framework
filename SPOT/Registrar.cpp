@@ -54,7 +54,7 @@ Action* Registrar::CreateRequiredAction()
 	//TODO: Add case for each action
 	
 	case EXIT:
-		cout << "Exit Button is Pressed" << endl;
+		cout << "Exit Button Presses" << endl;
 		RequiredAction = new ActionExit(this);
 		break;
 
