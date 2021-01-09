@@ -31,7 +31,9 @@ class GUI
 		ITM_LOAD_PLAN,
 		ITM_LOAD_CRS_CATALOG,
 		ITM_LOAD_REQ,
-
+		//ITM_GPA,
+		//ITM_STUDENT_LEVEL,
+		//ITM_CRS_STATUS,
 		ITM_EXIT,		//Exit item
 
 		ITM_CNT			//no. of menu items ==> This should be the last line in this enum
