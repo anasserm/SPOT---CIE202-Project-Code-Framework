@@ -129,11 +129,9 @@
     <ClCompile Include="Actions\ActionLoadCrsOffering.cpp" />
     <ClCompile Include="Actions\ActionLoadPrgReq.cpp" />
     <ClCompile Include="Actions\ActionLoadStdyPlan.cpp" />
-    <ClCompile Include="Actions\ActionRedo.cpp" />
     <ClCompile Include="Actions\ActionSaveStdyPlan.cpp" />
     <ClCompile Include="Actions\ActionStatus.cpp" />
     <ClCompile Include="Actions\ActionStudentLevel.cpp" />
-    <ClCompile Include="Actions\ActionUndo.cpp" />
     <ClCompile Include="Courses\Course.cpp" />
     <ClCompile Include="CrsCatalog.cpp" />
     <ClCompile Include="CrsOffering.cpp" />
@@ -192,11 +190,9 @@
     <ClInclude Include="Actions\ActionLoadCrsOffering.h" />
     <ClInclude Include="Actions\ActionLoadPrgReq.h" />
     <ClInclude Include="Actions\ActionLoadStdyPlan.h" />
-    <ClInclude Include="Actions\ActionRedo.h" />
     <ClInclude Include="Actions\ActionSaveStdyPlan.h" />
     <ClInclude Include="Actions\ActionStatus.h" />
     <ClInclude Include="Actions\ActionStudentLevel.h" />
-    <ClInclude Include="Actions\ActionUndo.h" />
     <ClInclude Include="Courses\Course.h" />
     <ClInclude Include="CrsCatalog.h" />
     <ClInclude Include="CrsOffering.h" />

@@ -167,13 +167,7 @@
     <ClCompile Include="Actions\ActionLoadStdyPlan.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="Actions\ActionRedo.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
     <ClCompile Include="Actions\ActionSaveStdyPlan.cpp">
-      <Filter>Actions</Filter>
-    </ClCompile>
-    <ClCompile Include="Actions\ActionUndo.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
     <ClCompile Include="CrsCatalog.cpp" />
@@ -295,13 +289,7 @@
     <ClInclude Include="Actions\ActionLoadStdyPlan.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="Actions\ActionRedo.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
     <ClInclude Include="Actions\ActionSaveStdyPlan.h">
-      <Filter>Actions</Filter>
-    </ClInclude>
-    <ClInclude Include="Actions\ActionUndo.h">
       <Filter>Actions</Filter>
     </ClInclude>
     <ClInclude Include="CrsCatalog.h" />

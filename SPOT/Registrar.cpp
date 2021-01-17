@@ -9,8 +9,6 @@
 #include "Actions/ActionLoadPrgReq.h"
 #include "Actions/ActionLoadStdyPlan.h"
 #include "Actions/ActionSaveStdyPlan.h"
-#include "Actions/ActionRedo.h"
-#include "Actions/ActionUndo.h"
 #include "Actions/ActionSaveStdyPlan.h"
 #include "Actions/ActionGPA.h"
 #include "Actions/ActionLoadCrsOffering.h"
@@ -105,14 +103,6 @@ Action* Registrar::CreateRequiredAction()
 		RequiredAction = new ActionLoadCrsOffering(this);
 		break;
 
-
-	case UNDO:
-		RequiredAction = new ActionUndo(this);
-		break;
-
-	case REDO:
-		RequiredAction = new ActionRedo(this);
-		break;
 	}
 	return RequiredAction;
 }

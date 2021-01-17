@@ -57,6 +57,7 @@ bool ActionAddCourse::Execute()
 		//For the seke of demo, we will add the course to the 1st year, 1st semester
 		StudyPlan* pS = pReg->getStudyPlay();
 		pS->AddCourse(pC, year, sem);
+		delete pC;
 	}
 
 	
@@ -69,4 +70,5 @@ bool ActionAddCourse::Execute()
 
 ActionAddCourse::~ActionAddCourse()
 {
+	
 }

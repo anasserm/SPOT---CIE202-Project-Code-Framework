@@ -65,7 +65,7 @@ bool ActionLoadCrsCatalog::Execute()
 		}
 
 		Pcata->addCrs(pCrs);
-
+		delete pCrs;
 	}
 
 	
