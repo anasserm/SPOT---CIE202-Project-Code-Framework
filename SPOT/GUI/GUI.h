@@ -27,10 +27,14 @@ class GUI
 
 
 		ITM_NOTE,                   //take note
-		ITM_SAVE_PLAN,            // 
-		ITM_LOAD_PLAN,
-		ITM_LOAD_CRS_CATALOG,
-		ITM_LOAD_REQ,
+		ITM_SAVE_PLAN,            // save study plan
+		ITM_LOAD_PLAN,				// load study plan
+		ITM_LOAD_CRS_CATALOG,		// load course catalog
+		ITM_LOAD_REQ,                // load program requirment
+		ITM_GPA,                    // calculate gpa
+		ITM_STATUS,					// show course status
+		ITM_S_LEVEL,				// show stuedent level
+		ITM_OFFERING,				// load course offering
 
 		ITM_EXIT,		//Exit item
 

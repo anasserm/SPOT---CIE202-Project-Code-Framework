@@ -12,6 +12,10 @@
 #include "Actions/ActionRedo.h"
 #include "Actions/ActionUndo.h"
 #include "Actions/ActionSaveStdyPlan.h"
+#include "Actions/ActionGPA.h"
+#include "Actions/ActionLoadCrsOffering.h"
+#include "Actions/ActionStatus.h"
+#include "Actions/ActionStudentLevel.h"
 
 #include <iostream>
 
@@ -85,6 +89,23 @@ Action* Registrar::CreateRequiredAction()
 	case LOAD_plan:   //study plan
 		RequiredAction = new ActionLoadStdyPlan(this);
 		break;
+
+	case GPA:   
+		RequiredAction = new ActionGPA(this);
+		break;
+
+	case S_LEVEL:
+		RequiredAction = new ActionStudentLevel(this);
+		break;
+
+	case CRS_STATUS:
+		RequiredAction = new ActionStatus(this);
+		break;
+
+	case CRS_OFFERING:
+		RequiredAction = new ActionLoadCrsOffering(this);
+		break;
+
 
 	case UNDO:
 		RequiredAction = new ActionUndo(this);

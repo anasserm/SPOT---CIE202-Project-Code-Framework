@@ -55,6 +55,10 @@ void GUI::CreateMenu() const
 	MenuItemImages[ITM_LOAD_PLAN] = "GUI\\Images\\Menu\\import.jpg";
 	MenuItemImages[ITM_LOAD_CRS_CATALOG] = "GUI\\Images\\Menu\\catalog.jpg";
 	MenuItemImages[ITM_LOAD_REQ] = "GUI\\Images\\Menu\\req.jpg";
+	MenuItemImages[ITM_GPA] = "GUI\\Images\\Menu\\gpa.jpg";
+	MenuItemImages[ITM_S_LEVEL] = "GUI\\Images\\Menu\\level.jpg";
+	MenuItemImages[ITM_OFFERING] = "GUI\\Images\\Menu\\offer.jpg";
+	MenuItemImages[ITM_STATUS] = "GUI\\Images\\Menu\\status.jpg";
 
 
 	MenuItemImages[ITM_EXIT] = "GUI\\Images\\Menu\\exit.jpg";
@@ -230,6 +234,11 @@ ActionData GUI::GetUserAction(string msg) const
 				case ITM_LOAD_CRS_CATALOG: return ActionData{ LOAD_CRS_CATALOG };
 				case ITM_LOAD_REQ: return ActionData{ LOAD_PRG_REQ };
 				case ITM_EXIT: return ActionData{ EXIT };		//Exit
+				case ITM_GPA: return ActionData{ GPA };
+				case ITM_STATUS: return ActionData{ CRS_STATUS };
+				case ITM_S_LEVEL: return ActionData{ S_LEVEL };
+				case ITM_OFFERING: return ActionData{ CRS_OFFERING };
+
 				default: return ActionData{ MENU_BAR };	//A click on empty place in menu bar
 				}
 			}

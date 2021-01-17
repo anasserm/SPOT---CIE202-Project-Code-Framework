@@ -22,7 +22,7 @@ enum ActionType
 	ADD_CRS,	//Add a course to study plan
 	DEL_CRS,	//Delete a course from study plan
 	CHNGE_CRS_CODE,
-
+	CRS_OFFERING,
 	ADD_NOTES,
 	LOAD_CRS_CATALOG,
 
@@ -31,7 +31,9 @@ enum ActionType
 	SAVE_plan,		//Save a study plan to file
 	LOAD_plan,		//Load a study plan from a file
 
-
+	GPA,
+	CRS_STATUS,
+	S_LEVEL,
 
 	UNDO,		//Undo the last Action preformed
 	REDO,		//Redo the last Action canceled
