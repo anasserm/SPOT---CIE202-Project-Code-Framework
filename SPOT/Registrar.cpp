@@ -27,7 +27,6 @@ Registrar::Registrar()
 	pSPlan = new StudyPlan;	//create a study plan.
 	Pcata = new CrsCatalog;
 	pr = new ProgReq;
-	RegRules = new Rules;
 	pCO = new CrsOffering;
 }
 
@@ -45,7 +44,7 @@ StudyPlan* Registrar::getStudyPlay() const
 
 Action* Registrar::CreateRequiredAction() 
 {	
-	ActionData actData = pGUI->GetUserAction("Pick and action...");
+	ActionData actData = pGUI->GetUserAction("Pick an action...");
 	cout << actData.actType << endl;
 	Action* RequiredAction = nullptr;
 
@@ -190,4 +189,9 @@ void Registrar::UpdateInterface()
 Registrar::~Registrar()
 {
 	delete pGUI;
+	delete pCO;
+	delete pSPlan;
+	delete pr;
+	delete Pcata;
+	
 }

@@ -15,6 +15,7 @@ bool ActionAddCourse::Execute()
 	pGUI->PrintMsg("Add Course to plan: Enter course Code(e.g. CIE202):");
 	Course_Code code = pGUI->GetSrting();
 	pGUI->PrintMsg("Add Course to plan: Enter credits (between 2 and 6):");
+	
 	int crd = stoi(pGUI->GetSrting());
 	//TODO: add input validation
 
