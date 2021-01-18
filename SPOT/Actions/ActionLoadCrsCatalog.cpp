@@ -17,15 +17,13 @@ bool ActionLoadCrsCatalog::Execute()
 	GUI* pGUI = pReg->getGUI();
 	
 	CrsCatalog* Pcata = pReg->getCrsCatalog();
-	ifstream finput("cata.txt");
+	ifstream finput("../Files/cata.txt");
 	while (!finput.eof())
 	{
 		string title, name, crd, co, pre;
 		char* pch;  char* ch;
 		char* context = nullptr;
 		const int size = 300;
-		stringstream coreq(co);
-		stringstream prereq(pre);
 		char line[size];
 		finput.getline(line, size);
 		
@@ -34,10 +32,9 @@ bool ActionLoadCrsCatalog::Execute()
 		cout << pch<<endl;
 		name = pch;
 		// get course title 
-		pch = strtok_s(NULL, ",", &context); cout << pch << endl;
-		title = pch;
+		pch = strtok_s(NULL, ",", &context); 
 		// get credits
-		pch = strtok_s(NULL, ",", &context); cout << pch << endl;
+		pch = strtok_s(NULL, ",", &context);
 		char* c[1];
 		c[0] = pch;
 		int cre;
@@ -49,37 +46,62 @@ bool ActionLoadCrsCatalog::Execute()
 
 		pch = strtok_s(NULL, ":", &context); cout << pch << endl;
 		
-		if (pch[1] == 'P') // only prerequisit
+		if (pch != NULL)
 		{
 
-			ch = strtok_s(pch, "", &context);
-			pre = ch;
-			while (prereq.good()) {
-				string sub;
-				getline(prereq, sub, ',');
-				PreReq.push_back(sub);
+			if (pch[1] == 'P') // only prerequisit
+			{
+				pch = strtok_s(NULL, "", &context);
+				ch = strtok_s(pch, "", &context);
+				pre = ch;
+
+				stringstream prereq(pre);
+				while (prereq.good()) {
+					string sub;
+					getline(prereq, sub, ',');
+					PreReq.push_back(sub);
+				}
+				PreReq.pop_back();
+
+			}
+			else // coreq is found 
+			{
+
+				ch = strtok_s(NULL, ":", &context);         // string of co + ,req
+				co = ch;
+				stringstream coreq(co);
+				while (coreq.good()) {
+					string substr;
+					getline(coreq, substr, ',');              //get first string delimited by comma
+
+					CoReq.push_back(substr);
+				}
+				if (CoReq.size() > 1)
+				{
+					CoReq.pop_back();
+					CoReq.pop_back();
+				}
+
+				ch = strtok_s(NULL, ":", &context); // string of pre req
+
+				if (ch != NULL)
+				{
+					pre = ch;
+					stringstream prereq(pre);
+
+
+					while (prereq.good()) {
+						string sub;
+						getline(prereq, sub, ',');          //get first string delimited by comma
+						PreReq.push_back(sub);
+					}
+
+					PreReq.pop_back();
+
+				}
+
 			}
 
-		}
-		else // coreq is found 
-		{
-
-			ch = strtok_s(NULL, ":", &context);         // string of co + ,req
-			co = ch;
-			while (coreq.good()) {
-				string substr;
-				getline(coreq, substr, ',');              //get first string delimited by comma
-				CoReq.push_back(substr);
-			}
-			CoReq.pop_back();
-
-			ch = strtok_s(NULL, ":", &context); // string of pre req
-			pre = ch;
-			while (prereq.good()) {
-				string sub;
-				getline(prereq, sub, ',');          //get first string delimited by comma
-				PreReq.push_back(sub);
-			}
 		}
 		
 		Pcata->addCrs(pCrs);
