@@ -14,7 +14,6 @@
 #include "Actions/ActionLoadCrsOffering.h"
 #include "Actions/ActionStatus.h"
 #include "Actions/ActionStudentLevel.h"
-
 #include <iostream>
 
 string Registrar::user_type = " ";

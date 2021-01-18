@@ -39,12 +39,12 @@ int Course::getCredits() const
 	return credits;
 }
 
-list<string> Course::getPreReq() 
+vector<string> Course::getPreReq() 
 {
 	return  PreReq;
 }
 
-list<string> Course::getCoReq() 
+vector<string> Course::getCoReq() 
 {
 	return CoReq;
 }

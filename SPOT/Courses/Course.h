@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include <list>
+#include <vector>
 using namespace std;
 #include "..\DEFs.h"
 
@@ -15,8 +15,8 @@ class Course : public Drawable
 	string type;	//Univ, track, or major.....etc.
 	bool Done;		//Done or not yet?
 	string grade;
-	list<Course_Code> PreReq;	//list of prerequisites
-	list<Course_Code> CoReq;	//list of corequisites
+	vector<Course_Code> PreReq;	//vector of prerequisites
+	vector<Course_Code> CoReq;	//vector of corequisites
 	
 	string status;
 public:
@@ -24,8 +24,8 @@ public:
 	string getTitle() const;
 	string getCode() const;
 	int getCredits() const;
-	list <string> getPreReq();
-	list <string> getCoReq();
+	vector <string> getPreReq();
+	vector <string> getCoReq();
 	void setCode(Course_Code crs_code);
 	string getGrade()const;
 	void setStatus(string s) ;
