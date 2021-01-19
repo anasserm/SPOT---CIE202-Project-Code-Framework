@@ -76,10 +76,17 @@ void GUI::CreateMenu() const
 
 void GUI::get_nYears() const{
 	if (Registrar::user_type.compare("Sci") == 0)
+	{
 		GUI::nYears = 4;
+		CellHeight = (WindHeight - (MenuBarHeight + StatusBarHeight)) / (nYears + 1);
+	}
+		
 
 	if (Registrar::user_type.compare("Eng") == 0)
+	{
 		GUI::nYears = 5;
+		CellHeight = (WindHeight - (MenuBarHeight + StatusBarHeight)) / (nYears + 1);
+	}
 	
 
 }
@@ -292,7 +299,7 @@ SEMESTER GUI::xtosem(int x_cord) const
 
 int GUI::ytoyear(int y_cord) const
 {
-	CellHeight = (WindHeight - (MenuBarHeight + StatusBarHeight)) / (nYears + 1);
+	
 	return ((y_cord - (CellHeight + MenuBarHeight)) / CellHeight) + 1;
 }
 
