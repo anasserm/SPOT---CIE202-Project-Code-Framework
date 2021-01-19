@@ -56,22 +56,9 @@ bool ActionAddCourse::Execute()
 		graphicsInfo gInfo{ x, y };
 
 		//TODO: given course code, get course title, crd hours from registrar
-		
-		string Title;
-		int crd;
-		int k = 0;
-		for (auto i = Crss.begin(); i != Crss.end(); i++, k++)
-		{
-			if (Crss[k]->getCode() == code)
-			{
-				crd = Crss[k]->getCredits();
-				Title = Crss[k]->getTitle();
-
-				break;
-			}
-			
-
-		}
+				
+		int crd = Crss[j]->getCredits();
+		string Title = Crss[j]->getTitle();
 
 		Course* pC = new Course(code, Title, crd);
 		pC->setGfxInfo(gInfo);
