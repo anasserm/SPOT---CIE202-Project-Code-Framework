@@ -16,31 +16,33 @@ bool ActionLoadStdyPlan::Execute()
 {
 	StudyPlan* myStudyplan = pReg->getStudyPlay();
 	GUI* pGUI = pReg->getGUI();
-	ifstream finput;
 
 	pGUI->PrintMsg("Enter the name of the study plan to be loaded: SPC, CIE, ENV, NAN, PEU, REE ");
 	string file_name = pGUI->GetSrting();
+	int n = stoi(file_name);
 
-	while (file_name != "SPC" || file_name != "REE"  || file_name != "NAN"  || file_name != "ENV"  || file_name != "CIE"  || file_name != "PEU")
+	while (n > 7 || n < 1)
 	{
-		pGUI->PrintMsg("Error, please enter the name of the study plan coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
+		pGUI->PrintMsg("Error, please enter the name of your plan coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
 		string file_name = pGUI->GetSrting();
+		n = stoi(file_name);
 	}
+	
+	string path;
+	if (n == 1)
+		path = "Files/plan/SPC.txt";
+	else if (n == 2)
+		path = "/Files/plan/REE.txt";
+	else if (n == 3)
+		path = "Files/plan/ENV.txt";
+	else if (n == 4)
+		path = "Files/plan/CIE.txt";
+	else if (n == 5)
+		path = "Files/plan/NAN.txt";
+	else if (n == 6)
+		path = "Files/plan/PEU.txt";
 
-	if (file_name=="SPC")
-	ifstream finput("Files/plan/SPC.txt");
-	else if (file_name == "REE")
-		ifstream finput("Files/plan/REE.txt");
-	else if (file_name == "ENV")
-		ifstream finput("Files/plan/ENV.txt");
-	else if (file_name == "CIE")
-		ifstream finput("Files/plan/CIE.txt");
-	else if (file_name == "NAN")
-		ifstream finput("Files/plan/NAN.txt");
-	else if (file_name == "PEU")
-		ifstream finput("Files/plan/PEU.txt");
-
-
+	ifstream finput(path);
 	char* pch;
 	char* context = nullptr;
 	const int size = 300;
@@ -49,6 +51,7 @@ bool ActionLoadStdyPlan::Execute()
 	{
 		//parse the line
 		pch = strtok_s(line, ",", &context);
+		cout << pch << endl;
 		while (pch != NULL)
 		{
 

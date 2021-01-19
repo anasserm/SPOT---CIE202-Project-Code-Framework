@@ -2,8 +2,11 @@
 #include "Action.h"
 #include "..\Registrar.h"
 #include "../Courses/UnivCourse.h"
+#include <utility>
+#include <list>
+#include <vector>
 //Class responsible for adding course action
-class ActionAddCourse :
+class ActionAddCourse:
 	public Action
 {
 public:
