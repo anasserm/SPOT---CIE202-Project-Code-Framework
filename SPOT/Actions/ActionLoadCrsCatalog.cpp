@@ -17,38 +17,41 @@ bool ActionLoadCrsCatalog::Execute()
 	GUI* pGUI = pReg->getGUI();
 	
 	CrsCatalog* Pcata = pReg->getCrsCatalog();
-	ifstream finput("../Files/cata.txt");
+	ifstream finput("D://cata.txt");
+	
 	while (!finput.eof())
 	{
-		string title, name, crd, co, pre;
+		string title, name, co, pre; int i = 0;
 		char* pch;  char* ch;
 		char* context = nullptr;
 		const int size = 300;
 		char line[size];
 		finput.getline(line, size);
-		
-		// get course code name 
+		string s = strtok_s(line, "", &context);
+		i += s.size();
+		// get course code name
 		pch = strtok_s(line, ",", &context);
-		cout << pch<<endl;
 		name = pch;
-		// get course title 
+		i -= name.size();
+		// get course title
 		pch = strtok_s(NULL, ",", &context); 
+		title = pch;
+		i -= title.size();
 		// get credits
-		pch = strtok_s(NULL, ",", &context);
-		char* c[1];
-		c[0] = pch;
-		int cre;
-		cre = stoi(c[0]);
+		pch = strtok_s(NULL, ",", &context); 
+		string cr = pch;
+		i -= cr.size();
+		i = i - 3;
+		int cre = stoi(pch);
 		
 		Course* pCrs = new Course(name, title, cre);
 		vector<string >CoReq = pCrs->getCoReq();
 		vector<string >PreReq = pCrs->getPreReq();
 
-		pch = strtok_s(NULL, ":", &context); cout << pch << endl;
-		
-		if (pch != NULL)
+		 
+		if (i > 0)
 		{
-
+			pch = strtok_s(NULL, ":", &context);
 			if (pch[1] == 'P') // only prerequisit
 			{
 				pch = strtok_s(NULL, "", &context);
@@ -104,10 +107,11 @@ bool ActionLoadCrsCatalog::Execute()
 
 		}
 		
+		
 		Pcata->addCrs(pCrs);
 		
 	}
-
+	
 	
 		return true;
 }
