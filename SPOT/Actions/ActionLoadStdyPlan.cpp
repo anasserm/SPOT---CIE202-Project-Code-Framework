@@ -43,6 +43,7 @@ bool ActionLoadStdyPlan::Execute()
 		path = "Files/plan/PEU.txt";
 
 	ifstream finput(path);
+
 	char* pch;
 	char* context = nullptr;
 	const int size = 300;

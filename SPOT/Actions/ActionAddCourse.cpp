@@ -1,6 +1,6 @@
 #include "ActionAddCourse.h"
-
-
+#include "../CrsCatalog.h"
+#include "../Courses/Course.h"
 #include <iostream>
 #include <string>
 ActionAddCourse::ActionAddCourse(Registrar* p) :Action(p)
@@ -10,21 +10,31 @@ ActionAddCourse::ActionAddCourse(Registrar* p) :Action(p)
 bool ActionAddCourse::Execute()
 {
 	GUI* pGUI = pReg->getGUI();
-
-	pGUI->PrintMsg("Add Course to plan: Enter course Code(e.g. CIE202):");
+	CrsCatalog* pCC = pReg->getCrsCatalog();
+	pGUI->PrintMsg("Add Course to plan: Enter course Code (e.g. CIE202):");
 	Course_Code code = pGUI->GetSrting();
-	pGUI->PrintMsg("Add Course to plan: Enter credits (between 2 and 6):");
 
-	int crd = stoi(pGUI->GetSrting());
+	
+	vector<Course*> Crss = pCC->Courses;
+	int j  = 0, jj=0;
 	//TODO: add input validation
-
-	while (crd < 2 || crd > 6)
+	do
 	{
-		pGUI->PrintMsg("Error: Enter credits (between 2 and 6):");
-		crd = stoi(pGUI->GetSrting());
-
-		cout << crd << endl;
-	}
+		for (auto i = Crss.begin(); i != Crss.end(); i++, j++)
+		{
+			if (Crss[j]->getCode() == code)
+			{
+				jj++;
+				break;
+			}
+		}
+		if (jj == 0)
+		{
+			pGUI->PrintMsg("Error: wrong course code, please try again:");
+			Course_Code code = pGUI->GetSrting();
+		}
+	} while (jj==0);
+	
 
 	ActionData actData = pGUI->GetUserAction("Select a year to add coures to: ");
 	//TODO: add input validation
@@ -46,8 +56,23 @@ bool ActionAddCourse::Execute()
 		graphicsInfo gInfo{ x, y };
 
 		//TODO: given course code, get course title, crd hours from registrar
-		//For now, we will add any dummy values
-		string Title = "Test101";
+		
+		string Title;
+		int crd;
+		int k = 0;
+		for (auto i = Crss.begin(); i != Crss.end(); i++, k++)
+		{
+			if (Crss[k]->getCode() == code)
+			{
+				crd = Crss[k]->getCredits();
+				Title = Crss[k]->getTitle();
+
+				break;
+			}
+			
+
+		}
+
 		Course* pC = new Course(code, Title, crd);
 		pC->setGfxInfo(gInfo);
 
