@@ -15,6 +15,7 @@ public:
 	int getnCourses(int year, SEMESTER sem) const;
 	int semToX(int count, SEMESTER sem) const;
 	int yearToY(int year, int count) const;
+	int searchCourse(Course_Code code);
 	virtual ~ActionAddCourse();
 };
 

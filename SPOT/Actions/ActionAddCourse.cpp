@@ -7,34 +7,46 @@ ActionAddCourse::ActionAddCourse(Registrar* p) :Action(p)
 {
 }
 
+
+int ActionAddCourse::searchCourse(Course_Code code)
+{
+	CrsCatalog* pCC = pReg->getCrsCatalog();
+	vector<Course*> Crss = pCC->Courses;
+	int flag = 0;
+	for (auto i = Crss.begin(); i != Crss.end(); i++)
+	{
+		
+		if (code.compare(Crss[flag]->getCode()) == 0)
+		{
+			cout << "search: " << flag << endl;
+			return flag;
+		}
+			
+		flag++;
+	}
+
+
+	return 0;
+}
+
+
 bool ActionAddCourse::Execute()
 {
 	GUI* pGUI = pReg->getGUI();
 	CrsCatalog* pCC = pReg->getCrsCatalog();
 	pGUI->PrintMsg("Add Course to plan: Enter course Code (e.g. CIE202):");
 	Course_Code code = pGUI->GetSrting();
-
-	
 	vector<Course*> Crss = pCC->Courses;
-	int j  = 0, jj=0;
-	//TODO: add input validation
-	do
+
+	while (searchCourse(code) == 0)
 	{
-		for (auto i = Crss.begin(); i != Crss.end(); i++, j++)
-		{
-			if (Crss[j]->getCode() == code)
-			{
-				jj++;
-				break;
-			}
-		}
-		if (jj == 0)
-		{
-			pGUI->PrintMsg("Error: wrong course code, please try again:");
-			Course_Code code = pGUI->GetSrting();
-		}
-	} while (jj==0);
-	
+		pGUI->PrintMsg("ERROR! Re Enter the course code: ");
+		code = pGUI->GetSrting();
+
+	}
+	cout << code << endl;
+	int index = searchCourse(code);
+	cout << index << endl;
 
 	ActionData actData = pGUI->GetUserAction("Select a year to add coures to: ");
 	//TODO: add input validation
@@ -57,8 +69,8 @@ bool ActionAddCourse::Execute()
 
 		//TODO: given course code, get course title, crd hours from registrar
 				
-		int crd = Crss[j]->getCredits();
-		string Title = Crss[j]->getTitle();
+		int crd = Crss[index]->getCredits();
+		string Title = Crss[index]->getTitle();
 
 		Course* pC = new Course(code, Title, crd);
 		pC->setGfxInfo(gInfo);
@@ -111,6 +123,7 @@ int ActionAddCourse::yearToY(int year, int count) const
 
 	return ((year) * cellHeight + menuBarHight) + (count / 4) * 50;
 }
+
 
 
 ActionAddCourse::~ActionAddCourse()
