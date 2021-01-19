@@ -16,7 +16,6 @@ bool ActionLoadPrgReq::Execute()
 {
 	
 	GUI* pGUI = pReg->getGUI();
-	ifstream file;
 
 	pGUI->PrintMsg("Enter the name of your program to be loaded: 1=SPC, 2=CIE, 3=ENV, 4=NAN, 5=PEU, 6=REE ");
 	string file_name = pGUI->GetSrting();
@@ -29,18 +28,21 @@ bool ActionLoadPrgReq::Execute()
 		n = stoi(file_name);
 	}
 
-	if (n != 1)
-		ifstream file("Files/req/SPC.txt");
-	else if (n != 2)
-		ifstream file("Files/req/REE.txt");
-	else if (n != 3)
-		ifstream file("Files/req/ENV.txt");
-	else if (n != 4)
-		ifstream file("Files/req/CIE.txt");
-	else if (n != 5)
-		ifstream file("Files/req/NAN.txt");
-	else if (n != 6)
-		ifstream file("Files/req/PEU.txt");
+	string path;
+	if (n == 1)
+		path = "Files/req/SPC.txt";
+	else if (n == 2)
+		path = "/Files/req/REE.txt";
+	else if (n == 3)
+		path = "Files/req/ENV.txt";
+	else if (n == 4)
+		path = "Files/req/CIE.txt";
+	else if (n == 5)
+		path = "Files/req/NAN.txt";
+	else if (n == 6)
+		path = "Files/req/PEU.txt";
+
+	ifstream file(path);
 
 	ProgReq* pr = pReg->getProgReq();
 	while (!file.eof())
