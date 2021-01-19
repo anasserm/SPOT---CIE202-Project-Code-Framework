@@ -4,6 +4,7 @@
 AcademicYear::AcademicYear()
 {
 	//TODO: make all necessary initializations
+
 }
 
 

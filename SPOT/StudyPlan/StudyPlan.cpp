@@ -1,6 +1,8 @@
 #include "StudyPlan.h"
-
+#include <iostream>
 int StudyPlan::numOfCourses = 0;
+
+using namespace std;
 
 StudyPlan::StudyPlan()
 {
@@ -15,7 +17,6 @@ StudyPlan::StudyPlan()
 bool StudyPlan::AddCourse(Course* pC, int year, SEMESTER sem)
 {
 	//TODO: add all requried checks to add the course 
-
 	plan[year - 1]->AddCourse(pC, sem);
 	TotalCredits += pC->getCredits();
 	numOfCourses++;
@@ -32,6 +33,11 @@ void StudyPlan::DrawMe(GUI* pGUI) const
 vector<AcademicYear*> StudyPlan::getPlan() const
 {
 	return plan;
+}
+
+int StudyPlan::getYearCourses(int year, SEMESTER sem) const
+{
+	return  plan[year - 1]->getYearCourses(sem).size();
 }
 
 StudyPlan::~StudyPlan()

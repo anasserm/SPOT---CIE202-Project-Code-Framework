@@ -20,6 +20,7 @@ class Course : public Drawable
 	
 	string status;
 public:
+	Course();
 	Course(Course_Code r_code,string r_title, int crd);
 	string getTitle() const;
 	string getCode() const;

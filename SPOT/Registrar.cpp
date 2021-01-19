@@ -42,7 +42,6 @@ StudyPlan* Registrar::getStudyPlay() const
 Action* Registrar::CreateRequiredAction() 
 {	
 	ActionData actData = pGUI->GetUserAction("Pick an action...");
-	cout << actData.actType << endl;
 	Action* RequiredAction = nullptr;
 
 	switch (actData.actType)

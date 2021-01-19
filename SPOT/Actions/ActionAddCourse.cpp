@@ -1,6 +1,5 @@
 #include "ActionAddCourse.h"
-#include "..\Registrar.h"
-#include "../Courses/UnivCourse.h"
+
 
 #include <iostream>
 #include <string>
@@ -23,7 +22,6 @@ bool ActionAddCourse::Execute()
 	{
 		pGUI->PrintMsg("Error: Enter credits (between 2 and 6):");
 		crd = stoi(pGUI->GetSrting());
-		cout << crd << endl;
 
 	}
 
@@ -36,12 +34,13 @@ bool ActionAddCourse::Execute()
 	if (actData.actType == DRAW_AREA)	//user clicked inside drawing area
 	{
 		//get coord where user clicked
-		x = actData.x;
-		y = actData.y;
+		int x = actData.x;
+		int y = actData.y;
 		year = actData.year;
 		sem = actData.sem;
-		
-		
+		int count = getnCourses(year, sem);
+		x = semToX(count, sem);
+		y = yearToY(year, count);
 		
 		graphicsInfo gInfo{ x, y };
 
@@ -65,6 +64,30 @@ bool ActionAddCourse::Execute()
 	
 
 	return true;
+}
+
+int ActionAddCourse::getnCourses(int year, SEMESTER sem) const {
+	StudyPlan* pS = pReg->getStudyPlay();
+	int countCourses = pS->getYearCourses(year, sem);
+	
+
+	return countCourses;
+}
+
+int ActionAddCourse::semToX(int count, SEMESTER sem) const
+{
+	GUI* pGUI = pReg->getGUI();
+	int cellWidth = pGUI->getCellWidth();
+	return ((int)sem + 1) * cellWidth + ((count % 4) * 75);
+}
+
+int ActionAddCourse::yearToY(int year, int count) const
+{
+	GUI* pGUI = pReg->getGUI();
+	int cellHeight = pGUI->getCellHeight();
+	int menuBarHight = pGUI->getMenuBarHgight();
+
+	return ((year) * cellHeight + menuBarHight) + (count / 4) * 50;
 }
 
 

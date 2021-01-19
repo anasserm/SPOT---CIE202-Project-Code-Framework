@@ -249,7 +249,7 @@ ActionData GUI::GetUserAction(string msg) const
 			{
 				SEMESTER sem = xtosem(x); 
 				int yr = ytoyear(y);
-				return ActionData{ DRAW_AREA,x,y, yr, sem };	//user want clicks inside drawing area
+				return ActionData{ DRAW_AREA, x, y, yr, sem };	//user want clicks inside drawing area
 			}
 
 			//[3] User clicks on the status bar
@@ -281,8 +281,23 @@ SEMESTER GUI::xtosem(int x_cord) const
 
 int GUI::ytoyear(int y_cord) const
 {
-	GUI::CellHeight = (WindHeight - (MenuBarHeight + StatusBarHeight)) / nYears;
-	return((y_cord - MenuBarHeight) / GUI::CellHeight) + 1;
+	CellHeight = (WindHeight - (MenuBarHeight + StatusBarHeight)) / (nYears + 1);
+	return ((y_cord - (CellHeight + MenuBarHeight)) / CellHeight) + 1;
+}
+
+int GUI::getCellHeight() const
+{
+	return CellHeight;
+}
+
+int GUI::getMenuBarHgight() const
+{
+	return MenuBarHeight;
+}
+
+int GUI::getCellWidth() const
+{
+	return CellWidth;
 }
 
 string GUI::GetSrting() const

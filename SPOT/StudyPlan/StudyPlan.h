@@ -19,6 +19,7 @@ public:
 	bool AddCourse(Course*, int year, SEMESTER);
 	void virtual DrawMe(GUI*) const;
 	vector<AcademicYear*> getPlan()const;
+	int getYearCourses(int year, SEMESTER sem)const;
 	virtual ~StudyPlan();
 	void setNotes(string);
 	int getCredits() const;
