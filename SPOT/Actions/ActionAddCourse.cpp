@@ -16,13 +16,14 @@ bool ActionAddCourse::Execute()
 
 	
 	vector<Course*> Crss = pCC->Courses;
-	int j  = 0, jj=0;
-	//TODO: add input validation
+	int jj = 0; int crd; string Title;
+	//TODO: add input validation .compare("Sci") != 0
 	do
 	{
-		for (auto i = Crss.begin(); i != Crss.end(); i++, j++)
+		int j = 0;
+		for (auto i = Crss.begin() ; i != Crss.end(); i++, j++)
 		{
-			if (Crss[j]->getCode() == code)
+			if (!code.compare(Crss[j]->getCode()))
 			{
 				jj++;
 				break;
@@ -31,9 +32,17 @@ bool ActionAddCourse::Execute()
 		if (jj == 0)
 		{
 			pGUI->PrintMsg("Error: wrong course code, please try again:");
-			Course_Code code = pGUI->GetSrting();
+			 code = pGUI->GetSrting();
 		}
-	} while (jj==0);
+		else
+		{
+			 crd = Crss[j]->getCredits();
+			 Title = Crss[j]->getTitle();
+		}
+
+
+
+	} while (!jj);
 	
 
 	ActionData actData = pGUI->GetUserAction("Select a year to add coures to: ");
@@ -57,9 +66,6 @@ bool ActionAddCourse::Execute()
 
 		//TODO: given course code, get course title, crd hours from registrar
 				
-		int crd = Crss[j]->getCredits();
-		string Title = Crss[j]->getTitle();
-
 		Course* pC = new Course(code, Title, crd);
 		pC->setGfxInfo(gInfo);
 
