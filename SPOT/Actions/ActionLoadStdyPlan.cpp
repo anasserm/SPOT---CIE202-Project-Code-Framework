@@ -18,13 +18,13 @@ bool ActionLoadStdyPlan::Execute()
 	GUI* pGUI = pReg->getGUI();
 	ifstream finput;
 
-	pGUI->PrintMsg("Enter the name of the study plan to be loaded: SPC, CIE, ENV, NAN, PEU, REE ");
+	pGUI->PrintMsg("Enter the name of the study plan to be loaded: 1=SPC, 2=CIE, 3=ENV, 4=NAN, 5=PEU, 6=REE  ");
 	string file_name = pGUI->GetSrting();
 	int n = stoi(file_name);
 
 	while (n > 7 || n < 1)
 	{
-		pGUI->PrintMsg("Error, please enter the name of your plan coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
+		pGUI->PrintMsg("Error, please enter the name of your plan coorectly: 1=SPC, 2=CIE, 3=ENV, 4=NAN, 5=PEU, 6=REE  ");
 		string file_name = pGUI->GetSrting();
 		n = stoi(file_name);
 	}
