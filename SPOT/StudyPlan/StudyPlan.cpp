@@ -1,6 +1,8 @@
 #include "StudyPlan.h"
 #include <algorithm>
 int StudyPlan::numOfCourses = 0;
+using namespace std;
+
 
 StudyPlan::StudyPlan()
 {
@@ -63,18 +65,19 @@ bool StudyPlan::checkPre(Course* pCourse, SEMESTER sem, int year, vector <pair<C
 	//Myvector contains the codes of the prerequisite courses and the year and semester they are registered in
 
 	//TODO:
-	list<string> pre_reqs = pCourse->getPreReq(); //in this step I define a list (pre_reqs) equivalent to PreReq which is list <course_code> 
-	std::list<string>::iterator it;
+	vector<string> pre_reqs = pCourse->getPreReq(); //in this step I define a list (pre_reqs) equivalent to PreReq which is list <course_code> 
+
 	double course_year_code = year;
 
 	//this step is used to be able to compare between the course under check and the courses in Myvector
 	if (sem == FALL) course_year_code += 0.1;
 	else if (sem == SPRING) course_year_code += 0.2;
 	else course_year_code += 0.3;  //for example if a course is in the summer of year 2, its decimal will be 2.3
-
-	for (it = pre_reqs.begin(); it != pre_reqs.end(); ++it)
+	int j = 0;
+	for (auto i = pre_reqs.begin(); i != pre_reqs.end(); i++,j++)
 	{
-		string course_under_check = *it;
+
+		string course_under_check = pre_reqs[j];
 
 		for (int i = 0; i < Myvector.size(); i++)
 		{
@@ -100,12 +103,12 @@ bool StudyPlan::checkCo(Course* pCourse, SEMESTER sem, int year)
 	{
 		//std::list<Course*>::const_iterator it = getPlan()[year]->getYearCourses(sem).begin();
 		//std::advance(it, j);
-		auto it = std::next(getPlan()[year]->getYearCourses(sem).begin(), j);
+		auto it = next(getPlan()[year]->getYearCourses(sem).begin(), j);
 		Course* temp = *it;
 		yearCourses.push_back(temp->getCode());
 	}
 
-	bool is_subset = std::includes(pCourse->getCoReq().begin(), pCourse->getCoReq().end(), yearCourses.begin(), yearCourses.end());
+	bool is_subset = includes(pCourse->getCoReq().begin(), pCourse->getCoReq().end(), yearCourses.begin(), yearCourses.end());
 	return is_subset;
 }
 

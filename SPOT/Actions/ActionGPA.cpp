@@ -91,8 +91,6 @@ bool ActionGPA::Execute()
 				}
 				
 				totalPoints += points;
-
-
 			}
 		}
 	}
