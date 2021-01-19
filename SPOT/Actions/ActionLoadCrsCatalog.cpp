@@ -17,7 +17,7 @@ bool ActionLoadCrsCatalog::Execute()
 	GUI* pGUI = pReg->getGUI();
 	
 	CrsCatalog* Pcata = pReg->getCrsCatalog();
-	ifstream finput("cata.txt");
+	ifstream finput("Files/cata.txt");
 	
 	while (!finput.eof())
 	{

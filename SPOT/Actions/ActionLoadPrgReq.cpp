@@ -15,7 +15,31 @@ ActionLoadPrgReq::ActionLoadPrgReq(Registrar*p) :Action(p)
 bool ActionLoadPrgReq::Execute()
 {
 	
-	ifstream file("D:\CIE-Requirements.txt");
+	GUI* pGUI = pReg->getGUI();
+	ifstream file;
+
+	pGUI->PrintMsg("Enter the name of your program to be loaded: SPC, CIE, ENV, NAN, PEU, REE ");
+	string file_name = pGUI->GetSrting();
+
+	while (file_name != "SPC" || file_name != "REE" || file_name != "NAN" || file_name != "ENV" || file_name != "CIE" || file_name != "PEU")
+	{
+		pGUI->PrintMsg("Error, please enter the name ofyour program coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
+		string file_name = pGUI->GetSrting();
+	}
+
+	if (file_name == "SPC")
+		ifstream finput("Files/req/SPC.txt");
+	else if (file_name == "REE")
+		ifstream finput("Files/req/REE.txt");
+	else if (file_name == "ENV")
+		ifstream finput("Files/req/ENV.txt");
+	else if (file_name == "CIE")
+		ifstream finput("Files/req/CIE.txt");
+	else if (file_name == "NAN")
+		ifstream finput("Files/req/NAN.txt");
+	else if (file_name == "PEU")
+		ifstream finput("Files/req/PEU.txt");
+
 	ProgReq* pr = pReg->getProgReq();
 
 	int totalCrd=pr->getTotalCredit();

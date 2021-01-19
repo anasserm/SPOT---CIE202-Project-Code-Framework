@@ -16,11 +16,31 @@ bool ActionLoadStdyPlan::Execute()
 {
 	StudyPlan* myStudyplan = pReg->getStudyPlay();
 	GUI* pGUI = pReg->getGUI();
+	ifstream finput;
 
-	pGUI->PrintMsg("Enter the name of the study plan to be loaded");
+	pGUI->PrintMsg("Enter the name of the study plan to be loaded: SPC, CIE, ENV, NAN, PEU, REE ");
 	string file_name = pGUI->GetSrting();
 
-	ifstream finput("spc.txt");
+	while (file_name != "SPC" || file_name != "REE"  || file_name != "NAN"  || file_name != "ENV"  || file_name != "CIE"  || file_name != "PEU")
+	{
+		pGUI->PrintMsg("Error, please enter the name of the study plan coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
+		string file_name = pGUI->GetSrting();
+	}
+
+	if (file_name=="SPC")
+	ifstream finput("Files/plan/SPC.txt");
+	else if (file_name == "REE")
+		ifstream finput("Files/plan/REE.txt");
+	else if (file_name == "ENV")
+		ifstream finput("Files/plan/ENV.txt");
+	else if (file_name == "CIE")
+		ifstream finput("Files/plan/CIE.txt");
+	else if (file_name == "NAN")
+		ifstream finput("Files/plan/NAN.txt");
+	else if (file_name == "PEU")
+		ifstream finput("Files/plan/PEU.txt");
+
+
 	char* pch;
 	char* context = nullptr;
 	const int size = 300;

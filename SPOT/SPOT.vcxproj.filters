@@ -185,6 +185,9 @@
     <ClCompile Include="Actions\ActionLoadCrsOffering.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\ActionPetition.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -305,6 +308,9 @@
     <ClInclude Include="ProgReq.h" />
     <ClInclude Include="CrsOffering.h" />
     <ClInclude Include="Actions\ActionLoadCrsOffering.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionPetition.h">
       <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>
