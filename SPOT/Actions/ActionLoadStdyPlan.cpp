@@ -1,10 +1,5 @@
 #include "ActionLoadStdyPlan.h"
-#include "..\Registrar.h"
-#include "../Courses/UnivCourse.h"
-#include <iostream>
-#include <string>
-#include <fstream>
-#include <unordered_map> 
+
 using namespace std;
 
 ActionLoadStdyPlan::ActionLoadStdyPlan(Registrar* p) :Action(p)
@@ -47,11 +42,13 @@ bool ActionLoadStdyPlan::Execute()
 	char* context = nullptr;
 	const int size = 300;
 	char line[size];
+	int count, x, y;
+	graphicsInfo gInfo;
+	int num;
 	while (finput.getline(line, size))
 	{
 		//parse the line
 		pch = strtok_s(line, ",", &context);
-		cout << pch << endl;
 		while (pch != NULL)
 		{
 
@@ -67,14 +64,25 @@ bool ActionLoadStdyPlan::Execute()
 			sem = it->second;
 
 			pch = strtok_s(NULL, ",", &context);
+			
 			while (pch != NULL) {
 				Course_Code cc = pch;
-				myStudyplan->AddCourse(new Course(cc, "Lebron", 3), year, sem);
+				Course* pCrs = new Course(cc, "Lebron", 3);
+				count = getnCourses(year, sem);
+				x = semToX(count, sem);
+				y = yearToY(year, count);
+
+				//cin >> num;
+				gInfo.x = x;
+				gInfo.y = y;
+
+
+				pCrs->setGfxInfo(gInfo);
+				myStudyplan->AddCourse(pCrs, year, sem);
 				pch = strtok_s(NULL, ",", &context);
 			}
 
 		}
-		cout << endl;
 	}
 
 	myStudyplan->DrawMe(pGUI);
@@ -83,9 +91,34 @@ bool ActionLoadStdyPlan::Execute()
 	// STEP 3: Close the file.
 	finput.close();
 	return true;
-
-
 }
+
+
+int ActionLoadStdyPlan::getnCourses(int year, SEMESTER sem) const {
+	StudyPlan* pS = pReg->getStudyPlay();
+	int countCourses = pS->getYearCourses(year, sem);
+
+
+	return countCourses;
+}
+
+int ActionLoadStdyPlan::semToX(int count, SEMESTER sem) const
+{
+	GUI* pGUI = pReg->getGUI();
+	int cellWidth = pGUI->getCellWidth();
+	return ((int)sem + 1) * cellWidth + ((count % 4) * 75);
+}
+
+int ActionLoadStdyPlan::yearToY(int year, int count) const
+{
+	GUI* pGUI = pReg->getGUI();
+	int cellHeight = pGUI->getCellHeight();
+	int menuBarHight = pGUI->getMenuBarHgight();
+
+
+	return ((year*cellHeight) + menuBarHight) + (count / 4) * 50;
+}
+
 
 ActionLoadStdyPlan::~ActionLoadStdyPlan()
 {
