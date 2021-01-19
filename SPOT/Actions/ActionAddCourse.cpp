@@ -50,6 +50,8 @@ bool ActionAddCourse::Execute()
 		//TODO: Ask registrar to add course to the year selected by the user
 		//TODO: add the course to the correct year obtained from registrar
 
+		//For the seke of demo, we will add the course to the 1st year, 1st semester
+		StudyPlan* pS = pReg->getStudyPlay();
 
 		double MyPair = year;
 		if (sem == FALL) MyPair += 0.1;
@@ -59,9 +61,7 @@ bool ActionAddCourse::Execute()
 		vector <pair <Course_Code, double> > Myvector;
 		Myvector.push_back(make_pair(code, MyPair));
 
-		//For the seke of demo, we will add the course to the 1st year, 1st semester
-		StudyPlan* pS = pReg->getStudyPlay();
-		bool Check_for_pre = pS->checkPre(pC, sem, year, Myvector);
+		//bool Check_for_pre = pS->checkPre(pC, sem, year, Myvector);
 		/*bool Check_for_co = pS->checkCo(pC, sem, year);*/
 
 		pS->AddCourse(pC, year, sem);
