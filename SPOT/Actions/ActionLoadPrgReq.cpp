@@ -18,26 +18,28 @@ bool ActionLoadPrgReq::Execute()
 	GUI* pGUI = pReg->getGUI();
 	ifstream file;
 
-	pGUI->PrintMsg("Enter the name of your program to be loaded: SPC, CIE, ENV, NAN, PEU, REE ");
+	pGUI->PrintMsg("Enter the name of your program to be loaded: 1=SPC, 2=CIE, 3=ENV, 4=NAN, 5=PEU, 6=REE ");
 	string file_name = pGUI->GetSrting();
+	int n = stoi(file_name);
 
-	while (file_name != "SPC" || file_name != "REE" || file_name != "NAN" || file_name != "ENV" || file_name != "CIE" || file_name != "PEU")
+	while (n>7 || n<1)
 	{
 		pGUI->PrintMsg("Error, please enter the name ofyour program coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
 		string file_name = pGUI->GetSrting();
+		n = stoi(file_name);
 	}
 
-	if (file_name == "SPC")
+	if (n != 1)
 		ifstream finput("Files/req/SPC.txt");
-	else if (file_name == "REE")
+	else if (n != 2)
 		ifstream finput("Files/req/REE.txt");
-	else if (file_name == "ENV")
+	else if (n != 3)
 		ifstream finput("Files/req/ENV.txt");
-	else if (file_name == "CIE")
+	else if (n != 4)
 		ifstream finput("Files/req/CIE.txt");
-	else if (file_name == "NAN")
+	else if (n != 5)
 		ifstream finput("Files/req/NAN.txt");
-	else if (file_name == "PEU")
+	else if (n != 6)
 		ifstream finput("Files/req/PEU.txt");
 
 	ProgReq* pr = pReg->getProgReq();

@@ -20,24 +20,27 @@ bool ActionLoadStdyPlan::Execute()
 
 	pGUI->PrintMsg("Enter the name of the study plan to be loaded: SPC, CIE, ENV, NAN, PEU, REE ");
 	string file_name = pGUI->GetSrting();
+	int n = stoi(file_name);
 
-	while (file_name != "SPC" || file_name != "REE"  || file_name != "NAN"  || file_name != "ENV"  || file_name != "CIE"  || file_name != "PEU")
+	while (n > 7 || n < 1)
 	{
-		pGUI->PrintMsg("Error, please enter the name of the study plan coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
+		pGUI->PrintMsg("Error, please enter the name of your plan coorectly: SPC, CIE, ENV, NAN, PEU, REE ");
 		string file_name = pGUI->GetSrting();
+		n = stoi(file_name);
 	}
+	
 
-	if (file_name=="SPC")
-	ifstream finput("Files/plan/SPC.txt");
-	else if (file_name == "REE")
+	if (n != 1)
+		ifstream finput("Files/plan/SPC.txt");
+	else if (n != 2)
 		ifstream finput("Files/plan/REE.txt");
-	else if (file_name == "ENV")
+	else if (n != 3)
 		ifstream finput("Files/plan/ENV.txt");
-	else if (file_name == "CIE")
+	else if (n != 4)
 		ifstream finput("Files/plan/CIE.txt");
-	else if (file_name == "NAN")
+	else if (n != 5)
 		ifstream finput("Files/plan/NAN.txt");
-	else if (file_name == "PEU")
+	else if (n != 6)
 		ifstream finput("Files/plan/PEU.txt");
 
 
