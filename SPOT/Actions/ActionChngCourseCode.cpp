@@ -24,7 +24,8 @@ bool ActionChngCourseCode::Execute()
 			{
 				if ((*it)->getCode() == code)
 				{
-
+					pGUI->PrintMsg("Enter New Course Code to Change: ");
+					(*it)->setCode(pGUI->GetSrting());
 					found = true;
 					break;
 				}
@@ -33,34 +34,22 @@ bool ActionChngCourseCode::Execute()
 
 			if (found)
 				break;
+
 			sem_del++;
 		}
 		if (found)
 			break;
+
 		year_del++;
 
 
 	}
 
-	if (found)
+	if (!found)
 	{
-		pGUI->PrintMsg("Enter NEW Course Code to Change: ");
-		string new_code = pGUI->GetSrting();
-		StudyPlan* sp = pReg->getStudyPlay();
-		vector<AcademicYear*> years = sp->getPlan();
-		list<Course*> listCourses = years[year_del]->getYearCourses((SEMESTER)sem_del);
-
-
-		list<Course*>::iterator it2 = listCourses.begin();
-		advance(it2, idx);
-
-		
-		(*it2)->setCode(new_code);
-
-	}
-	else {
 		pGUI->PrintMsg("ERROR. Couldn't find course code");
 	}
+
 	return true;
 }
 

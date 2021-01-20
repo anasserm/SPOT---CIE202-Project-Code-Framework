@@ -23,7 +23,7 @@ public:
 	// the 4th parameter of the function checkPre() is a vector of pairs. Each element in this vector contains the course_code and a related decimal telling info about the year and semester
 	bool checkCo(Course*, SEMESTER, int);
 	void virtual DrawMe(GUI*) const;
-	vector<AcademicYear*> getPlan()const;
+	vector<AcademicYear*> getPlan();
 	int getYearCourses(int year, SEMESTER sem)const;
 	virtual ~StudyPlan();
 	void setNotes(string);

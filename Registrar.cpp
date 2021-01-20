@@ -25,6 +25,7 @@ Registrar::Registrar()
 	Pcata = new CrsCatalog;
 	pr = new ProgReq;
 	pCO = new CrsOffering;
+	pCheck = new Checks(this);
 }
 
 //returns a pointer to GUI
@@ -34,7 +35,7 @@ GUI* Registrar::getGUI() const
 }
 
 //returns the study plan
-StudyPlan* Registrar::getStudyPlay() 
+StudyPlan* Registrar::getStudyPlay() const
 {
 	return pSPlan;
 }
@@ -42,6 +43,7 @@ StudyPlan* Registrar::getStudyPlay()
 Action* Registrar::CreateRequiredAction() 
 {	
 	ActionData actData = pGUI->GetUserAction("Pick an action...");
+	cout << actData.actType << endl;
 	Action* RequiredAction = nullptr;
 
 	switch (actData.actType)
@@ -115,7 +117,7 @@ bool Registrar::ExecuteAction(Action* pAct)
 
 void Registrar::getUserType()const
 {
-	pGUI->PrintMsg("Are you Eng or Sci?  Enter: ");
+	pGUI->PrintMsg("Are you Eng or Sci.? Enter: ");
 	string user_t = pGUI->GetSrting();
 
 	while ( user_t.compare("Sci") != 0 && user_t.compare("Eng") != 0)
@@ -131,6 +133,10 @@ CrsCatalog* Registrar::getCrsCatalog() const
 	return this->Pcata;
 }
 
+Checks* Registrar::getChecks() const
+{
+	return this->pCheck;
+}
 ProgReq* Registrar::getProgReq() const
 {
 	return this->pr;

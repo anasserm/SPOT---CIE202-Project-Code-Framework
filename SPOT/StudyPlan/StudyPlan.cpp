@@ -33,7 +33,7 @@ void StudyPlan::DrawMe(GUI* pGUI) const
 		plan[i]->DrawMe(pGUI);
 }
 
-vector<AcademicYear*> StudyPlan::getPlan() const
+vector<AcademicYear*> StudyPlan::getPlan() 
 {
 	return plan;
 }

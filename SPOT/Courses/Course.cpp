@@ -1,6 +1,6 @@
 #include "Course.h"
 #include "../GUI/GUI.h"
-
+#include "../Registrar.h"
  
 
 Course::Course()
@@ -21,7 +21,15 @@ Course::~Course()
 {
 }
 
+string Course::getType() const
+{
+	return string(type);
+}
 
+void Course::setType(string t)
+{
+	type = t;
+}
 
 void Course::setStatus(string s)
 {
@@ -68,8 +76,6 @@ string Course::getGrade() const
 {
 	return this->grade;
 }
-
-
 
 void Course::setGrade(string grad)
 {

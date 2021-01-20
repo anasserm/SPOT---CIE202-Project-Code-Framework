@@ -18,7 +18,6 @@ bool ActionLoadCrsCatalog::Execute()
 	
 	CrsCatalog* Pcata = pReg->getCrsCatalog();
 	ifstream finput("Files/cata.txt");
-	
 	while (!finput.eof())
 	{
 		string title, name, co, pre; int i = 0;
@@ -112,7 +111,33 @@ bool ActionLoadCrsCatalog::Execute()
 		
 	}
 	
-	
+	ifstream file("Files/crs.txt");
+	while (!file.eof())
+	{ 
+		string type,code;
+		char* pch; 
+		char* context = nullptr;
+		const int size = 50;
+		char line[size];
+
+		file.getline(line, size);
+		vector<Course*> crs = Pcata->Courses;
+		pch = strtok_s(line, ",", &context);
+		code = pch;
+
+		pch = strtok_s(NULL, ",", &context);
+		type = pch;
+
+		for (int i=0;i<crs.size();i++)
+		{
+			if (!code.compare(crs[i]->getCode()))
+				crs[i]->setType(type);
+			else 
+				continue;
+		}
+
+	}
+
 		return true;
 }
 
