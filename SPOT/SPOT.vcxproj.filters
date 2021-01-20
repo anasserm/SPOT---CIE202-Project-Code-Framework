@@ -188,7 +188,18 @@
     <ClCompile Include="Actions\ActionPetition.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-    <ClCompile Include="ActionCheckReq.cpp" />
+    <ClCompile Include="Actions\ActionCheckReq.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
+    <ClCompile Include="Courses\MajorCourse.cpp">
+      <Filter>Courses</Filter>
+    </ClCompile>
+    <ClCompile Include="Courses\TrackCourse.cpp">
+      <Filter>Courses</Filter>
+    </ClCompile>
+    <ClCompile Include="Courses\UnivCourse.cpp">
+      <Filter>Courses</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -314,7 +325,18 @@
     <ClInclude Include="Actions\ActionPetition.h">
       <Filter>Actions</Filter>
     </ClInclude>
-    <ClInclude Include="ActionCheckReq.h" />
+    <ClInclude Include="Actions\ActionCheckReq.h">
+      <Filter>Actions</Filter>
+    </ClInclude>
+    <ClInclude Include="Courses\MajorCourse.h">
+      <Filter>Courses</Filter>
+    </ClInclude>
+    <ClInclude Include="Courses\TrackCourse.h">
+      <Filter>Courses</Filter>
+    </ClInclude>
+    <ClInclude Include="Courses\UnivCourse.h">
+      <Filter>Courses</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="GUI\CMUgraphicsLib\Manual.txt">

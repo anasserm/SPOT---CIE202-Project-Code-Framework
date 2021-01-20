@@ -119,9 +119,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ActionCheckReq.cpp" />
     <ClCompile Include="Actions\ActionAddCourse.cpp" />
     <ClCompile Include="Actions\ActionAddNote.cpp" />
+    <ClCompile Include="Actions\ActionCheckReq.cpp" />
     <ClCompile Include="Actions\ActionChngCourseCode.cpp" />
     <ClCompile Include="Actions\ActionDelCourse.cpp" />
     <ClCompile Include="Actions\ActionExit.cpp" />
@@ -135,6 +135,9 @@
     <ClCompile Include="Actions\ActionStatus.cpp" />
     <ClCompile Include="Actions\ActionStudentLevel.cpp" />
     <ClCompile Include="Courses\Course.cpp" />
+    <ClCompile Include="Courses\MajorCourse.cpp" />
+    <ClCompile Include="Courses\TrackCourse.cpp" />
+    <ClCompile Include="Courses\UnivCourse.cpp" />
     <ClCompile Include="CrsCatalog.cpp" />
     <ClCompile Include="CrsOffering.cpp" />
     <ClCompile Include="GUI\CMUgraphicsLib\CMUgraphics.cpp" />
@@ -181,10 +184,10 @@
     <ClCompile Include="StudyPlan\StudyPlan.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ActionCheckReq.h" />
     <ClInclude Include="Actions\Action.h" />
     <ClInclude Include="Actions\ActionAddCourse.h" />
     <ClInclude Include="Actions\ActionAddNote.h" />
+    <ClInclude Include="Actions\ActionCheckReq.h" />
     <ClInclude Include="Actions\ActionChngCourseCode.h" />
     <ClInclude Include="Actions\ActionDelCourse.h" />
     <ClInclude Include="Actions\ActionExit.h" />
@@ -198,6 +201,9 @@
     <ClInclude Include="Actions\ActionStatus.h" />
     <ClInclude Include="Actions\ActionStudentLevel.h" />
     <ClInclude Include="Courses\Course.h" />
+    <ClInclude Include="Courses\MajorCourse.h" />
+    <ClInclude Include="Courses\TrackCourse.h" />
+    <ClInclude Include="Courses\UnivCourse.h" />
     <ClInclude Include="CrsCatalog.h" />
     <ClInclude Include="CrsOffering.h" />
     <ClInclude Include="GUI\CMUgraphicsLib\CMUgraphics.h" />
