@@ -1,7 +1,8 @@
 #pragma once
-#include "GUI\GUI.h"
-#include "Actions\Action.h"
+#include "GUI/GUI.h"
+#include "Actions/Action.h"
 #include "Rules.h"
+#include "Checks.h"
 #include "StudyPlan/StudyPlan.h"
 #include "CrsCatalog.h"
 #include "ProgReq.h" 
@@ -17,17 +18,19 @@ class Registrar
 	CrsCatalog* Pcata;
 	ProgReq* pr;
 	CrsOffering* pCO;
+	Checks* pCheck;
 
 public:
 	static string user_type;
 	Registrar();
-	GUI* getGUI() const;
+	GUI* getGUI(); //const;
 	Action* CreateRequiredAction();
 	bool ExecuteAction(Action*);
 	void UpdateInterface();
-	StudyPlan* getStudyPlay() const;
+	StudyPlan* getStudyPlay(); //const;
 	void getUserType()const;
 	CrsCatalog* getCrsCatalog()const;
+	Checks* getChecks() const;
 	ProgReq* getProgReq()const;
 	CrsOffering* getCrsOffering()const;
 	void Run();
