@@ -188,11 +188,9 @@
     <ClCompile Include="Actions\ActionPetition.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-<<<<<<< HEAD
     <ClCompile Include="Actions\ActionDragCourse.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
-=======
     <ClCompile Include="Actions\ActionCheckReq.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
@@ -205,7 +203,6 @@
     <ClCompile Include="Courses\UnivCourse.cpp">
       <Filter>Courses</Filter>
     </ClCompile>
->>>>>>> 40919a31f2345a02ef83c7618c6753aedd17e158
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -331,11 +328,9 @@
     <ClInclude Include="Actions\ActionPetition.h">
       <Filter>Actions</Filter>
     </ClInclude>
-<<<<<<< HEAD
     <ClInclude Include="Actions\ActionDragCourse.h">
       <Filter>Actions</Filter>
     </ClInclude>
-=======
     <ClInclude Include="Actions\ActionCheckReq.h">
       <Filter>Actions</Filter>
     </ClInclude>
@@ -348,7 +343,6 @@
     <ClInclude Include="Courses\UnivCourse.h">
       <Filter>Courses</Filter>
     </ClInclude>
->>>>>>> 40919a31f2345a02ef83c7618c6753aedd17e158
   </ItemGroup>
   <ItemGroup>
     <Text Include="GUI\CMUgraphicsLib\Manual.txt">
