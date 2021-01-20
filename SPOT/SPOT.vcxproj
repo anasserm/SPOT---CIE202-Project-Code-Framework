@@ -133,6 +133,7 @@
     <ClCompile Include="Actions\ActionSaveStdyPlan.cpp" />
     <ClCompile Include="Actions\ActionStatus.cpp" />
     <ClCompile Include="Actions\ActionStudentLevel.cpp" />
+    <ClCompile Include="Checks.cpp" />
     <ClCompile Include="Courses\Course.cpp" />
     <ClCompile Include="CrsCatalog.cpp" />
     <ClCompile Include="CrsOffering.cpp" />
