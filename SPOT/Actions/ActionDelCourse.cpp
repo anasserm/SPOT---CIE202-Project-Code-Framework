@@ -27,8 +27,6 @@ bool ActionDelCourse::Execute()
 			{
 				if (code == (*it)->getCode())
 				{
-					//listCourses.remove(*it);
-					listCourses.erase(it);
 					found = true;
 					break;
 				}
@@ -44,6 +42,12 @@ bool ActionDelCourse::Execute()
 			break;
 
 		year_del++;
+	}
+
+	if (found)
+	{
+		years[year_del]->delCourse(idx, (SEMESTER)sem_del);
+
 	}
 
 	if (!found)

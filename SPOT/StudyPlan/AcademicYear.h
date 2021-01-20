@@ -25,8 +25,7 @@ public:
 
 	bool AddCourse(Course*, SEMESTER );
 	list<Course*> getYearCourses(SEMESTER sem);
-	
-
 	void virtual DrawMe(GUI*) const;
+	void delCourse(int index, SEMESTER sem);
 };
 

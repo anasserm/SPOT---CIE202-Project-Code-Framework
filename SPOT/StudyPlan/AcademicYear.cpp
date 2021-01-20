@@ -1,5 +1,6 @@
 #include "AcademicYear.h"
 #include "../GUI/GUI.h"
+#include <iostream>
 
 AcademicYear::AcademicYear()
 {
@@ -43,4 +44,11 @@ void AcademicYear::DrawMe(GUI* pGUI) const
 		{
 			(*it)->DrawMe(pGUI);	//call DrawMe for each course in this semester
 		}
+}
+
+void AcademicYear::delCourse(int index, SEMESTER sem)
+{
+	list<Course*>::iterator it = YearCourses[sem].begin();
+	advance(it, index);
+	YearCourses[sem].erase(it);
 }
