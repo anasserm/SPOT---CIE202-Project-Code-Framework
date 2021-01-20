@@ -1,7 +1,7 @@
 #include "GUI.h"
-#include "../Courses/Course.h"
-#include "../StudyPlan/AcademicYear.h"
-#include "../Registrar.h"
+#include "..\Courses/Course.h"
+#include "..\StudyPlan/AcademicYear.h"
+#include "..\Registrar.h"
 #include <sstream>
 #include <iostream>
 
