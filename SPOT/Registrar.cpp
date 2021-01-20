@@ -101,8 +101,9 @@ Action* Registrar::CreateRequiredAction()
 		break;
 
 	case CRS_OFFERING:
-		RequiredAction = new ActionLoadCrsOffering(this);
+		RequiredAction = new ActionPetition(this);
 		break;
+
 	case REORDER:
 		RequiredAction = new ActionDragCourse(this);
 		break;
@@ -152,15 +153,13 @@ void Registrar::Run()
 
 	ActionLoadCrsCatalog* p = new ActionLoadCrsCatalog(this);
 	bool done = p->Execute();
+	getUserType();
 
 	ActionCheckReq* c = new ActionCheckReq(this);
 	c->Execute();
-	ActionPetition* pe = new ActionPetition(this);
-	pe->Execute();
-
-		
-
-	getUserType();
+	
+	
+	
 	while (true)
 	{
 		//update interface here as CMU Lib doesn't refresh itself
@@ -175,6 +174,7 @@ void Registrar::Run()
 			else
 				break;
 		}
+		
 	}
 }
 
