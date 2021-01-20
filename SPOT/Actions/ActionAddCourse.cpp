@@ -10,8 +10,8 @@ ActionAddCourse::ActionAddCourse(Registrar* p) :Action(p)
 
 int ActionAddCourse::searchCourse(Course_Code code)
 {
-	CrsCatalog* pCC = pReg->getCrsCatalog();
-	vector<Course*> Crss = pCC->Courses;
+	CrsCatalog* cat = pReg->getCrsCatalog();
+	vector<Course*> Crss = cat->getCrsCatalog();
 	int flag = 0;
 	for (auto i = Crss.begin(); i != Crss.end(); i++)
 	{
@@ -32,10 +32,12 @@ int ActionAddCourse::searchCourse(Course_Code code)
 bool ActionAddCourse::Execute()
 {
 	GUI* pGUI = pReg->getGUI();
-	CrsCatalog* pCC = pReg->getCrsCatalog();
+	CrsCatalog* cat = pReg->getCrsCatalog();
+	vector<Course*> Crss = cat->getCrsCatalog();
+
 	pGUI->PrintMsg("Add Course to plan: Enter course Code (e.g. CIE202):");
 	Course_Code code = pGUI->GetSrting();
-	vector<Course*> Crss = pCC->Courses;
+	
 
 	while (searchCourse(code) < 0)
 	{

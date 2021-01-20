@@ -14,6 +14,7 @@
 #include "Actions/ActionLoadCrsOffering.h"
 #include "Actions/ActionStatus.h"
 #include "Actions/ActionStudentLevel.h"
+#include "Actions/ActionDragCourse.h"
 #include <iostream>
 
 string Registrar::user_type = " ";
@@ -99,6 +100,9 @@ Action* Registrar::CreateRequiredAction()
 
 	case CRS_OFFERING:
 		RequiredAction = new ActionLoadCrsOffering(this);
+		break;
+	case REORDER:
+		RequiredAction = new ActionDragCourse(this);
 		break;
 
 	}

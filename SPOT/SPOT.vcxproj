@@ -123,6 +123,7 @@
     <ClCompile Include="Actions\ActionAddNote.cpp" />
     <ClCompile Include="Actions\ActionChngCourseCode.cpp" />
     <ClCompile Include="Actions\ActionDelCourse.cpp" />
+    <ClCompile Include="Actions\ActionDragCourse.cpp" />
     <ClCompile Include="Actions\ActionExit.cpp" />
     <ClCompile Include="Actions\ActionGPA.cpp" />
     <ClCompile Include="Actions\ActionLoadCrsCatalog.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="Actions\ActionAddNote.h" />
     <ClInclude Include="Actions\ActionChngCourseCode.h" />
     <ClInclude Include="Actions\ActionDelCourse.h" />
+    <ClInclude Include="Actions\ActionDragCourse.h" />
     <ClInclude Include="Actions\ActionExit.h" />
     <ClInclude Include="Actions\ActionGPA.h" />
     <ClInclude Include="Actions\ActionLoadCrsCatalog.h" />

@@ -260,7 +260,7 @@ ActionData GUI::GetUserAction(string msg) const
 				case ITM_DLT: return ActionData{ DEL_CRS };
 				case ITM_DISP: return ActionData{ EXIT };
 				case ITM_CHNG_CODE: return ActionData{ CHNGE_CRS_CODE };
-				case ITM_REORDER: return ActionData{ EXIT };
+				case ITM_REORDER: return ActionData{ REORDER };
 				case ITM_NOTE: return ActionData{ ADD_NOTES };
 				case ITM_SAVE_PLAN: return ActionData{ SAVE_plan };
 				case ITM_LOAD_PLAN: return ActionData{ LOAD_plan };
