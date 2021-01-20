@@ -25,16 +25,17 @@ Registrar::Registrar()
 	Pcata = new CrsCatalog;
 	pr = new ProgReq;
 	pCO = new CrsOffering;
+	pCheck = new Checks(this);
 }
 
 //returns a pointer to GUI
-GUI* Registrar::getGUI() const
+GUI* Registrar::getGUI() //const
 {
 	return pGUI;
 }
 
 //returns the study plan
-StudyPlan* Registrar::getStudyPlay() const
+StudyPlan* Registrar::getStudyPlay() //const
 {
 	return pSPlan;
 }
@@ -132,6 +133,10 @@ CrsCatalog* Registrar::getCrsCatalog() const
 	return this->Pcata;
 }
 
+Checks* Registrar::getChecks() const
+{
+	return this->pCheck;
+}
 ProgReq* Registrar::getProgReq() const
 {
 	return this->pr;
