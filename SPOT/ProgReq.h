@@ -47,7 +47,7 @@ public:
 	void setMajorConcentration1ElectiveCredit(int s);
 
 
-	int getTotalCredit( ) ;
+	int getTotalCredit( );
 	int getUniComplsoryCredit( ) ;
 	int getUniElectiveCredit( ) ;
 	int getTrackComplsoryCredit( ) ;

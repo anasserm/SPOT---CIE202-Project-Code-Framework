@@ -188,6 +188,7 @@
     <ClCompile Include="Actions\ActionPetition.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="ActionCheckReq.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -313,6 +314,7 @@
     <ClInclude Include="Actions\ActionPetition.h">
       <Filter>Actions</Filter>
     </ClInclude>
+    <ClInclude Include="ActionCheckReq.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="GUI\CMUgraphicsLib\Manual.txt">

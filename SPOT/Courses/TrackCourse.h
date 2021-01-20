@@ -3,8 +3,10 @@
 class TrackCourse :
 	public Course
 {
+	vector<string> TrackCrs;
 public:
 	TrackCourse();
+	vector<string> getTrackCrs()const;
 	virtual ~TrackCourse();
 };
 
