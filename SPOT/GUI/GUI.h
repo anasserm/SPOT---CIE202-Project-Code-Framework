@@ -83,9 +83,6 @@ public:
 	string GetSrting() const;
 	SEMESTER xtosem(int x_cord) const;
 	int ytoyear(int y_cord) const;
-	int getCellHeight()const;
-	int getMenuBarHgight() const;
-	int getCellWidth()const;
 
 
 
