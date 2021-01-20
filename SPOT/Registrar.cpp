@@ -115,7 +115,7 @@ bool Registrar::ExecuteAction(Action* pAct)
 
 void Registrar::getUserType()const
 {
-	pGUI->PrintMsg("Are you Eng or Sci.? Enter: ");
+	pGUI->PrintMsg("Are you Eng or Sci?  Enter: ");
 	string user_t = pGUI->GetSrting();
 
 	while ( user_t.compare("Sci") != 0 && user_t.compare("Eng") != 0)

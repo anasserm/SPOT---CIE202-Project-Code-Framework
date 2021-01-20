@@ -18,7 +18,6 @@ int ActionAddCourse::searchCourse(Course_Code code)
 		
 		if (code.compare(Crss[flag]->getCode()) == 0)
 		{
-			cout << "search: " << flag << endl;
 			return flag;
 		}
 			
@@ -26,7 +25,7 @@ int ActionAddCourse::searchCourse(Course_Code code)
 	}
 
 
-	return 0;
+	return -1;
 }
 
 
@@ -38,15 +37,15 @@ bool ActionAddCourse::Execute()
 	Course_Code code = pGUI->GetSrting();
 	vector<Course*> Crss = pCC->Courses;
 
-	while (searchCourse(code) == 0)
+	while (searchCourse(code) < 0)
 	{
 		pGUI->PrintMsg("ERROR! Re Enter the course code: ");
 		code = pGUI->GetSrting();
 
 	}
-	cout << code << endl;
+	
 	int index = searchCourse(code);
-	cout << index << endl;
+	
 
 	ActionData actData = pGUI->GetUserAction("Select a year to add coures to: ");
 	//TODO: add input validation
