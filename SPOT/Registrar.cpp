@@ -17,6 +17,7 @@
 #include "Actions/ActionDragCourse.h"
 #include "Actions/ActionCheckReq.h"
 #include "Actions/ActionPetition.h"
+#include "Actions/ActionDisplay.h"
 #include <iostream>
 
 string Registrar::user_type = " ";
@@ -52,8 +53,6 @@ Action* Registrar::CreateRequiredAction()
 	case ADD_CRS:	//add_course action
 		RequiredAction = new ActionAddCourse(this);
 		break;
-
-	//TODO: Add case for each action
 	
 	case EXIT:
 		cout << "Exit Button Presses" << endl;
@@ -106,6 +105,10 @@ Action* Registrar::CreateRequiredAction()
 
 	case REORDER:
 		RequiredAction = new ActionDragCourse(this);
+		break;
+
+	case DISPLAY:
+		RequiredAction = new ActionDisplay(this);
 		break;
 
 	}

@@ -124,6 +124,7 @@
     <ClCompile Include="Actions\ActionCheckReq.cpp" />
     <ClCompile Include="Actions\ActionChngCourseCode.cpp" />
     <ClCompile Include="Actions\ActionDelCourse.cpp" />
+    <ClCompile Include="Actions\ActionDisplay.cpp" />
     <ClCompile Include="Actions\ActionDragCourse.cpp" />
     <ClCompile Include="Actions\ActionExit.cpp" />
     <ClCompile Include="Actions\ActionGPA.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="Actions\ActionCheckReq.h" />
     <ClInclude Include="Actions\ActionChngCourseCode.h" />
     <ClInclude Include="Actions\ActionDelCourse.h" />
+    <ClInclude Include="Actions\ActionDisplay.h" />
     <ClInclude Include="Actions\ActionDragCourse.h" />
     <ClInclude Include="Actions\ActionExit.h" />
     <ClInclude Include="Actions\ActionGPA.h" />

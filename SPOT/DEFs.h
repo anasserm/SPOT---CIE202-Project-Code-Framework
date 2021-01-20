@@ -25,7 +25,7 @@ enum ActionType
 	CRS_OFFERING,
 	ADD_NOTES,
 	LOAD_CRS_CATALOG,
-
+	DISPLAY,
 	LOAD_PRG_REQ,
 
 	SAVE_plan,		//Save a study plan to file

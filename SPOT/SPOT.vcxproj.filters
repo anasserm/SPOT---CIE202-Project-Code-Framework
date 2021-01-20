@@ -203,6 +203,9 @@
     <ClCompile Include="Courses\UnivCourse.cpp">
       <Filter>Courses</Filter>
     </ClCompile>
+    <ClCompile Include="Actions\ActionDisplay.cpp">
+      <Filter>Actions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -342,6 +345,9 @@
     </ClInclude>
     <ClInclude Include="Courses\UnivCourse.h">
       <Filter>Courses</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\ActionDisplay.h">
+      <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
