@@ -164,21 +164,35 @@ void GUI::DrawCourse(const Course* pCrs)
 	pWind->SetBrush(FillColor);
 	graphicsInfo gInfo = pCrs->getGfxInfo();
 
-	/*
-	if (pCrs->type == "elective")
-	pWind->DrawRectangle(gInfo.x, gInfo.y, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT,FILLED, 10, 10);
-	else 
+	
+	if (pCrs->getType() == "Elective")
 	{
-	pWind->SetPen(HiColor, 2);
+		pWind->DrawRectangle(gInfo.x, gInfo.y, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT, FILLED, 10, 10);
+	}
+	else if (pCrs->getType() == "Major")
+	{
+	pWind->SetPen(PINK, 2);
 	pWind->DrawRectangle(gInfo.x, gInfo.y, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT);
 	}
-	*/
+	else if (pCrs->getType() == "Track")
+	{
+		pWind->SetPen(MAGENTA, 2);
+		pWind->DrawRectangle(gInfo.x, gInfo.y, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT);
+	}
+	else if (pCrs->getType() == "University")
+	{
+		pWind->SetPen(LIGHTGREEN, 2);
+		pWind->DrawRectangle(gInfo.x, gInfo.y, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT);
+	}
+	else
+	{
+		pWind->DrawRectangle(gInfo.x, gInfo.y, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT);
+	}
 
-	pWind->DrawRectangle(gInfo.x, gInfo.y, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT);
 	pWind->DrawLine(gInfo.x, gInfo.y + CRS_HEIGHT / 2, gInfo.x + CRS_WIDTH, gInfo.y + CRS_HEIGHT / 2);
 	
 	//Write the course code and credit hours.
-	int Code_x = gInfo.x + CRS_WIDTH * 0.15;
+	int Code_x = gInfo.x + CRS_WIDTH * 0.05;
 	int Code_y = gInfo.y + CRS_HEIGHT * 0.05;
 	pWind->SetFont(CRS_HEIGHT * 0.4, BOLD , BY_NAME, "Gramound");
 	pWind->SetPen(MsgColor);

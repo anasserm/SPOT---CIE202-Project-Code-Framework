@@ -72,6 +72,7 @@ bool ActionAddCourse::Execute()
 		string Title = Crss[index]->getTitle();
 
 		Course* pC = new Course(code, Title, crd);
+		pC->setType(Crss[index]->getType());
 		pC->setGfxInfo(gInfo);
 
 		//TODO: Ask registrar to add course to the year selected by the user

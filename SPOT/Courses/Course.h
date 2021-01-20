@@ -3,7 +3,6 @@
 #include <vector>
 using namespace std;
 #include "..\DEFs.h"
-
 #include "../GUI/Drawable.h"
 
 //Base class for all types of courses
@@ -33,6 +32,8 @@ public:
 	void setGrade(string grad);
 	void DrawMe(GUI*) const;
 	virtual ~Course();
+	string getType()const;
+	void setType(string t);
 	
 	
 };
