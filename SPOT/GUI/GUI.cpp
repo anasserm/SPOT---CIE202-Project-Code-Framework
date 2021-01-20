@@ -125,6 +125,7 @@ void GUI::PrintMsg(string msg) const
 	pWind->SetFont(20, BOLD , BY_NAME, "Arial");
 	pWind->SetPen(MsgColor);
 	pWind->DrawString(MsgX, WindHeight - MsgY, msg);
+	//Pause(30);
 }
 
 //////////////////////////////////////////////////////////////////////////

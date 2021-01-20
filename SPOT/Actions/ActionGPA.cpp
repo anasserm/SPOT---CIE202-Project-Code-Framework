@@ -40,64 +40,72 @@ bool ActionGPA::Execute()
 
 			for (it = listCourses.begin(); it != listCourses.end(); ++it)
 			{
-				lettergrade = (*it)->getGrade();
-				if (lettergrade.empty())
+				if ((*it)->getStatus() == "Done")
 				{
-					pGUI->PrintMsg((*it)->getCode());
-						pGUI->PrintMsg("Enter Your grade for this course: ");
+					lettergrade = (*it)->getGrade();
+					if (lettergrade.empty())
+					{
+						string msg = "Enter your grade for this course " + (*it)->getCode();
+						pGUI->PrintMsg(msg);
 						(*it)->setGrade(pGUI->GetSrting());
-				}
-				 credit = (*it)->getCredits();
+					}
+					lettergrade = (*it)->getGrade();
+					credit = (*it)->getCredits();
 
-				if (lettergrade == "a" || lettergrade == "A")
-				{
-					points = credit * A;
-				}
-				else if (lettergrade == "a-" || lettergrade == "A-")
-				{
-					points = credit * A_MINUS;
-				}
-				else if (lettergrade == "b+" || lettergrade == "B+")
-				{
-					points = credit * B_PLUS;
-				}
-				else if (lettergrade == "b" || lettergrade == "B")
-				{
-					points = credit * B;
-				}
-				else if (lettergrade == "b-" || lettergrade == "B-")
-				{
-					points = credit * B_MINUS;
-				}
-				else if (lettergrade == "c+" || lettergrade == "C+")
-				{
-					points = credit * C_PLUS;
-				}
-				else if (lettergrade == "c" || lettergrade == "C")
-				{
-					points = credit * C;
-				}
-				else if (lettergrade == "c-" || lettergrade == "C-")
-				{
-					points = credit * C_MINUS;
-				}
-				else if (lettergrade == "d" || lettergrade == "D")
-				{
-					points = credit * D;
-				}
-				else if (lettergrade == "f" || lettergrade == "F")
-				{
-					points = credit * F;
+					if (lettergrade == "a" || lettergrade == "A")
+					{
+						points = credit * A;
+					}
+					else if (lettergrade == "a-" || lettergrade == "A-")
+					{
+						points = credit * A_MINUS;
+					}
+					else if (lettergrade == "b+" || lettergrade == "B+")
+					{
+						points = credit * B_PLUS;
+					}
+					else if (lettergrade == "b" || lettergrade == "B")
+					{
+						points = credit * B;
+					}
+					else if (lettergrade == "b-" || lettergrade == "B-")
+					{
+						points = credit * B_MINUS;
+					}
+					else if (lettergrade == "c+" || lettergrade == "C+")
+					{
+						points = credit * C_PLUS;
+					}
+					else if (lettergrade == "c" || lettergrade == "C")
+					{
+						points = credit * C;
+					}
+					else if (lettergrade == "c-" || lettergrade == "C-")
+					{
+						points = credit * C_MINUS;
+					}
+					else if (lettergrade == "d" || lettergrade == "D")
+					{
+						points = credit * D;
+					}
+					else if (lettergrade == "f" || lettergrade == "F")
+					{
+						points = credit * F;
+					}
+
+					totalPoints += points;
 				}
 				
-				totalPoints += points;
 			}
 		}
 	}
 
-	gpa = totalPoints / sp->getCredits();
-	pGUI->PrintMsg("your GPA is : ");
-	pGUI->PrintMsg(to_string(gpa));
+
+	double totalCredit = sp->getCredits();
+	gpa = totalPoints / totalCredit;
+	string msg = "your GPA is: "+to_string(gpa);
+	pGUI->PrintMsg( msg);
+	Sleep(2000);
 
 	return true;
 

@@ -29,6 +29,7 @@ public:
 	void setCode(Course_Code crs_code);
 	string getGrade()const;
 	void setStatus(string s) ;
+	string getStatus()const;
 	void setGrade(string grad);
 	void DrawMe(GUI*) const;
 	virtual ~Course();

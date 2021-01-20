@@ -13,6 +13,7 @@ Course::Course(Course_Code r_code, string r_title, int crd)//:code(r_code),Title
 	code = r_code;
 	Title = r_title;
 	credits = crd;
+	status = "Done";
 	
 
 }
@@ -34,6 +35,11 @@ void Course::setType(string t)
 void Course::setStatus(string s)
 {
 	this->status = s;
+}
+
+string Course::getStatus() const
+{
+	return string(status);
 }
 
 Course_Code Course::getCode() const

@@ -39,6 +39,7 @@ bool ActionCheckReq::Execute()
 		pGUI->PrintMsg("CRRITICAL ISSUE");
 	else if (sp->getUniCredit() != uni)
 		pGUI->PrintMsg("CRRITICAL ISSUE");
+	/*
 	else 
 		for (int i = 0; i < TrackCrs.size(); i++)
 		{
@@ -46,7 +47,7 @@ bool ActionCheckReq::Execute()
 
 
 		}
-
+	*/
 
 
 

@@ -23,9 +23,8 @@ bool ActionStatus::Execute()
 
 			for (it = listCourses.begin(); it != listCourses.end(); ++it)
 			{
-
-				pGUI->PrintMsg((*it)->getCode());
-				pGUI->PrintMsg("Enter Your grade for this course: ");
+				string msg = "Enter status for this course " + (*it)->getCode();
+				pGUI->PrintMsg(msg);
 				(*it)->setStatus(pGUI->GetSrting());
 
 
