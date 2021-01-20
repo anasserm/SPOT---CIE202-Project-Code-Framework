@@ -25,7 +25,7 @@ public:
 	Action* CreateRequiredAction();
 	bool ExecuteAction(Action*);
 	void UpdateInterface();
-	StudyPlan* getStudyPlay() const;
+	StudyPlan* getStudyPlay() ;
 	void getUserType()const;
 	CrsCatalog* getCrsCatalog()const;
 	ProgReq* getProgReq()const;

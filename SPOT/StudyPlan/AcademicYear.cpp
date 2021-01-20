@@ -26,7 +26,7 @@ bool AcademicYear::AddCourse(Course* pC, SEMESTER sem)
 	return true;
 }
 
-list<Course*> AcademicYear::getYearCourses(SEMESTER sem) const
+list<Course*> AcademicYear::getYearCourses(SEMESTER sem) 
 {
 	return YearCourses[sem];
 }

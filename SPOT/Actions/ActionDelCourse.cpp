@@ -8,7 +8,6 @@ ActionDelCourse::ActionDelCourse(Registrar*p) :Action(p)
 
 bool ActionDelCourse::Execute()
 {
-	
 	GUI* pGUI = pReg->getGUI();
 	pGUI->PrintMsg("Enter Course Code to Delete: ");
 	string code = pGUI->GetSrting();
@@ -16,7 +15,8 @@ bool ActionDelCourse::Execute()
 	vector<AcademicYear*> years = sp->getPlan();
 	int idx = 0, year_del = 0, sem_del = 0;
 	bool found = false;
-	for (int year = 0; year < years.size(); year++) // loop over years
+
+	for ( int year = 0; year < years.size(); year++) // loop over years
 	{
 		sem_del = 0;
 		for (int sem = FALL; sem < SEM_CNT; sem++) // loop over semesters
@@ -25,9 +25,10 @@ bool ActionDelCourse::Execute()
 			idx = 0;
 			for (list<Course*>::iterator it = listCourses.begin(); it != listCourses.end(); ++it)
 			{
-				if ((*it)->getCode() == code)
+				if (code == (*it)->getCode())
 				{
-
+					//listCourses.remove(*it);
+					listCourses.erase(it);
 					found = true;
 					break;
 				}
@@ -36,30 +37,21 @@ bool ActionDelCourse::Execute()
 
 			if (found)
 				break;
+
 			sem_del++;
 		}
 		if (found)
 			break;
+
 		year_del++;
-
-
 	}
 
-	if (found)
+	if (!found)
 	{
-
-		StudyPlan* sp = pReg->getStudyPlay();
-		vector<AcademicYear*> years = sp->getPlan();
-		list<Course*> listCourses = years[year_del]->getYearCourses((SEMESTER)sem_del);
-
-
-		list<Course*>::iterator it2 = listCourses.begin();
-		advance(it2, idx);
-
-	
-		listCourses.erase(it2);
-
+		pGUI->PrintMsg("ERROR. Couldn't find course code");
 	}
+
+
 	return true;
 }
 
