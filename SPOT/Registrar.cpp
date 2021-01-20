@@ -34,7 +34,7 @@ GUI* Registrar::getGUI() const
 }
 
 //returns the study plan
-StudyPlan* Registrar::getStudyPlay() 
+StudyPlan* Registrar::getStudyPlay() const
 {
 	return pSPlan;
 }
@@ -42,6 +42,7 @@ StudyPlan* Registrar::getStudyPlay()
 Action* Registrar::CreateRequiredAction() 
 {	
 	ActionData actData = pGUI->GetUserAction("Pick an action...");
+	cout << actData.actType << endl;
 	Action* RequiredAction = nullptr;
 
 	switch (actData.actType)
@@ -115,7 +116,7 @@ bool Registrar::ExecuteAction(Action* pAct)
 
 void Registrar::getUserType()const
 {
-	pGUI->PrintMsg("Are you Eng or Sci?  Enter: ");
+	pGUI->PrintMsg("Are you Eng or Sci.? Enter: ");
 	string user_t = pGUI->GetSrting();
 
 	while ( user_t.compare("Sci") != 0 && user_t.compare("Eng") != 0)
