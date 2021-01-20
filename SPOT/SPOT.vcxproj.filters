@@ -28,7 +28,6 @@
     <ClCompile Include="Courses\Course.cpp">
       <Filter>Courses</Filter>
     </ClCompile>
-    <ClCompile Include="Registrar.cpp" />
     <ClCompile Include="StudyPlan\StudyPlan.cpp">
       <Filter>StudyPlan</Filter>
     </ClCompile>
@@ -188,6 +187,8 @@
     <ClCompile Include="Actions\ActionPetition.cpp">
       <Filter>Actions</Filter>
     </ClCompile>
+    <ClCompile Include="Checks.cpp" />
+    <ClCompile Include="Registrar.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GUI\GUI.h">
@@ -196,7 +197,6 @@
     <ClInclude Include="Courses\Course.h">
       <Filter>Courses</Filter>
     </ClInclude>
-    <ClInclude Include="Registrar.h" />
     <ClInclude Include="StudyPlan\StudyPlan.h">
       <Filter>StudyPlan</Filter>
     </ClInclude>
@@ -313,6 +313,7 @@
     <ClInclude Include="Actions\ActionPetition.h">
       <Filter>Actions</Filter>
     </ClInclude>
+    <ClInclude Include="Registrar.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="GUI\CMUgraphicsLib\Manual.txt">
