@@ -67,6 +67,31 @@ int StudyPlan::getNumOfCourses() const
 	return this->numOfCourses;
 }
 
+int StudyPlan::getUniCredit() const
+{
+	return TotalUnivCredits;
+}
+
+int StudyPlan::getTrackCredit() const
+{
+	return TotalTrackCredits;
+}
+
+int StudyPlan::getMajorCredit() const
+{
+	return TotalMajorCredits;
+}
+
+int StudyPlan::getMinorCredit() const
+{
+	return TotalMinorCredits;
+}
+
+int StudyPlan::getConcentrationCredit() const
+{
+	return TotalConcentrationCredits;
+}
+
 bool StudyPlan::checkPre(Course* pCourse, SEMESTER sem, int year, vector <pair<Course_Code, double>> Myvector)
 {
 	//Myvector contains the codes of the prerequisite courses and the year and semester they are registered in

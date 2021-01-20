@@ -30,5 +30,13 @@ public:
 	int getCredits() const;
 	string getNotes();
 	int getNumOfCourses()const;
+
+	int getUniCredit() const;
+	int getTrackCredit()const;
+	int getMajorCredit()const;
+	int getMinorCredit()const;
+	int getConcentrationCredit()const;
+	
+
 };
 

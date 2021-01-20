@@ -15,6 +15,8 @@
 #include "Actions/ActionStatus.h"
 #include "Actions/ActionStudentLevel.h"
 #include "Actions/ActionDragCourse.h"
+#include "Actions/ActionCheckReq.h"
+#include "Actions/ActionPetition.h"
 #include <iostream>
 
 string Registrar::user_type = " ";
@@ -151,6 +153,11 @@ void Registrar::Run()
 	ActionLoadCrsCatalog* p = new ActionLoadCrsCatalog(this);
 	bool done = p->Execute();
 
+	ActionCheckReq* c = new ActionCheckReq(this);
+	c->Execute();
+	ActionPetition* pe = new ActionPetition(this);
+	pe->Execute();
+
 		
 
 	getUserType();
@@ -185,5 +192,6 @@ Registrar::~Registrar()
 	delete pSPlan;
 	delete pr;
 	delete Pcata;
+	
 	
 }

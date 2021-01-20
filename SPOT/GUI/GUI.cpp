@@ -195,6 +195,16 @@ void GUI::DrawCourse(const Course* pCrs)
 	int Code_x = gInfo.x + CRS_WIDTH * 0.05;
 	int Code_y = gInfo.y + CRS_HEIGHT * 0.05;
 	pWind->SetFont(CRS_HEIGHT * 0.4, BOLD , BY_NAME, "Gramound");
+	
+	// live warning colors
+	/* 
+	if (pCrs->getWarn()='C')
+	pWind->SetPen(ORANGE);
+	else if (pCrs->getWarn()='M')
+	pWind->SetPen(RED);
+	else 
+	*/
+
 	pWind->SetPen(MsgColor);
 
 	ostringstream crd;
